@@ -9,11 +9,11 @@ const MainContainer = styled.div`
   width: 100%;
 `;
 const GridContainer = styled.div`
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 85%;
+  margin : 50px auto 0 auto !important;
+  width: 95%;
 `;
-function App() {
+
+const App = () => {
   return (
     <MainContainer>
       <Menu LogoImage={LogoImage} position="left" />
