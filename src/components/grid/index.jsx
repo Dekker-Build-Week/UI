@@ -4,10 +4,13 @@ import ProjectCard from '../projectCard';
 
 export default () => {
     return (
+
         <Card.Group itemsPerRow={3}>
+            
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
+
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
