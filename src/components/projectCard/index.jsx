@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Icon } from 'semantic-ui-react';
 import clientImage from './bestway.png';
 import MyGuys from './myguys.jpg';
 import styled from 'styled-components';
@@ -33,6 +33,12 @@ class ProjectCard extends React.Component {
                         <Image src={MyGuys} floated="left" size="small"></Image>
                         <Image src={MyGuys} floated="right" size="small"></Image>
                     </ImageContainer>
+                </Card.Content>
+                <Card.Content extra>
+                    <Icon name="user" />
+                    <Icon name="user" />
+                    <Icon name="user" />
+                    <Icon name="user" />
                 </Card.Content>
             </ProjectTile>
         );
