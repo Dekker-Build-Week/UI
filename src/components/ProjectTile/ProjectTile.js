@@ -14,7 +14,7 @@ import Icon from "@material-ui/core/Icon";
 
 const useStyles = makeStyles(projectTileStyle);
 
-export default () => {
+export default (props) => {
     const classes = useStyles();
         return (
         <GridItem xs={3} sm={3} md={4}>
