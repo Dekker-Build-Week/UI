@@ -36,6 +36,9 @@ const headerStyle = () => ({
   flex: {
     flex: 1
   },
+  logoImage : {
+    height: "50px"
+  },
   title: {
     ...defaultFont,
     letterSpacing: "unset",
