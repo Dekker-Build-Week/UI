@@ -2,6 +2,14 @@ import AllenOveryLogo from './images/allen-overy-logo.jpg';
 import BestwayLogo from './images/bestway.png';
 import CondeLogo from './images/conde.png';
 
+import andi1 from './images/andis/001.jpg';
+import andi2 from './images/andis/002.jpg';
+import andi3 from './images/andis/003.jpg';
+import andi4 from './images/andis/004.jpg';
+import andi5 from './images/andis/005.jpg';
+import andi6 from './images/andis/006.jpg';
+import andi7 from './images/andis/007.jpg';
+
 export const ProjectInformation = [
     {
         "projectTitle" : "PeerPoint",
@@ -11,23 +19,23 @@ export const ProjectInformation = [
         "team" : [
             {            
                 "ANDiName" : "Phil Smith",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi1
             },
             {
                 "ANDiName" : "Jabari",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi2
             },
             {
                 "ANDiName" : "Alec",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi3
             },
             {
                 "ANDiName" : "Ellis",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi4
             },
             {
                 "ANDiName" : "Kate",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi5
             }
         ],
         "images" : [ "image1", "image2" ]
@@ -40,7 +48,7 @@ export const ProjectInformation = [
         "team" : [
             {            
                 "ANDiName" : "Sam C",
-                "ANDiPhoto" : undefined
+                "ANDiPhoto" : andi6
             }
         ],
         "images" : [ "image1", "image2" ]
@@ -50,7 +58,12 @@ export const ProjectInformation = [
         "clientName" : "Bestway",
         "clientLogo" : BestwayLogo,
         "projectDescription" : "Vanos",
-        "team" : [],
+        "team" : [
+            {
+                "ANDiName" : "Gary",
+                "ANDiPhoto" : andi7
+            }
+        ],
         "images" : [ "image1", "image2" ]
     }
 ]

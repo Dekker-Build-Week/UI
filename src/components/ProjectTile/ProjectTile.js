@@ -8,29 +8,41 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
+import CardBody from 'components/Card/CardBody';
+import ANDiPhotoTile from './ANDiPhoto';
 
 const useStyles = makeStyles(projectTileStyle);
 
 const ProjectTile = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images } = props;
+    const { projectTitle, clientName, team, clientLogo } = props;
 
     return (
         <GridItem xs={3} sm={3} md={4}>
             <Card>
               <CardHeader stats icon>
                 <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
-                <p className={classes.cardCategory}>{projectTitle}</p>
+                <p className={classes.cardCategory}>{clientName}</p>
                 <h3 className={classes.cardTitle}>
-                  {clientName}
+                  {projectTitle}
                 </h3>
               </CardHeader>
+              <CardBody className = {classes.cardBody}>
+                <p>Hey</p>
+              </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                    
-                  </a>
+                  <ul className = {classes.ANDiList}>
+                  {
+                    team.map((andi) => {
+                      return (
+                        <ANDiPhotoTile 
+                          ANDiPhoto = {andi.ANDiPhoto} />
+                      )
+                    })
+                  }
+                  </ul>
                 </div>
               </CardFooter>
             </Card>

@@ -10,8 +10,6 @@ const projectTileStyle = {
         display: "inline-flex",
         fontSize: "12px",
         lineHeight: "22px",
-        minHeight: "200px",
-        maxHeight: "200px",
         overflow: "hidden",
         "& svg": {
           top: "4px",
@@ -53,6 +51,15 @@ const projectTileStyle = {
         marginTop: "-20px",
         marginRight: "15px",
         float: "left"
+      },
+      cardBody : {
+        borderTop: "1px solid " + grayColor[10],
+        marginTop: "20px",  
+        marginLeft : "3px",
+        marginRight : "3px"
+      },
+      ANDiList : {
+        listStyle : "none"
       }
 };
 
