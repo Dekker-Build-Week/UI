@@ -9,6 +9,12 @@ import andi4 from './images/andis/004.jpg';
 import andi5 from './images/andis/005.jpg';
 import andi6 from './images/andis/006.jpg';
 import andi7 from './images/andis/007.jpg';
+import andi8 from './images/andis/008.jpg';
+import andi9 from './images/andis/009.jpg';
+import andi10 from './images/andis/010.jpg';
+import andi11 from './images/andis/011.jpg';
+import andi12 from './images/andis/012.jpg';
+import andi13 from './images/andis/013.jpg';
 
 export const ProjectInformation = [
     {
@@ -49,7 +55,19 @@ export const ProjectInformation = [
             {            
                 "ANDiName" : "Sam C",
                 "ANDiPhoto" : andi6
-            }
+            },
+            {
+                "ANDiName" : "Elliot",
+                "ANDiPhoto" : andi7
+            },
+            {
+                "ANDiName" : "Passen",
+                "ANDiPhoto" : andi8
+            },
+            {
+                "ANDiName" : "GuyOnTheThirdFloor",
+                "ANDiPhoto" : andi9
+            },
         ],
         "images" : [ "image1", "image2" ]
     },
@@ -62,6 +80,22 @@ export const ProjectInformation = [
             {
                 "ANDiName" : "Gary",
                 "ANDiPhoto" : andi7
+            },
+            {
+                "ANDiName" : "GuyOnTheThirdFloor",
+                "ANDiPhoto" : andi10
+            },
+            {
+                "ANDiName" : "GuyOnTheThirdFloor",
+                "ANDiPhoto" : andi11
+            },
+            {
+                "ANDiName" : "GuyOnTheThirdFloor",
+                "ANDiPhoto" : andi12
+            },
+            {
+                "ANDiName" : "GuyOnTheThirdFloor",
+                "ANDiPhoto" : andi13
             }
         ],
         "images" : [ "image1", "image2" ]
