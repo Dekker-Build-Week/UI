@@ -33,7 +33,7 @@ const ProjectTile = (props) => {
                 </h3>
               </CardHeader>
               <CardBody className = {classes.cardBody}>
-                <img src = {coverImage.source} className = {classes.StyleMyBitchUp} />
+                <img src = {coverImage.source} alt = "User Journey" className = {classes.userJourney} />
               </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>

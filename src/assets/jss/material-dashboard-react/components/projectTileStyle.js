@@ -62,7 +62,7 @@ const projectTileStyle = {
       ANDiList : {
         listStyle : "none"
       },
-      StyleMyBitchUp : {
+      userJourney : {
         maxHeight : "100%",
         marginLeft : "auto",        
         marginRight : "auto",

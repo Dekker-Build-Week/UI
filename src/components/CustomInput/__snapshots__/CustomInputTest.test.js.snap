@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Custom Inputs test suite Renders the CustomInput correctly 1`] = `
+<div
+  className="MuiFormControl-root makeStyles-formControl-10"
+>
+  <div
+    className="MuiInputBase-root MuiInput-root makeStyles-marginTop-9 MuiInput-underline makeStyles-underline-2 MuiInputBase-formControl MuiInput-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      className="MuiInputBase-input MuiInput-input"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+    />
+  </div>
+</div>
+`;

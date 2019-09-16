@@ -41,7 +41,7 @@ export default function CustomInput(props) {
   return (
     <FormControl
       {...formControlProps}
-      className={formControlProps.className + " " + classes.formControl}
+      className={formControlProps ? formControlProps.className + " " + classes.formControl : classes.formControl}
     >
       {labelText !== undefined ? (
         <InputLabel

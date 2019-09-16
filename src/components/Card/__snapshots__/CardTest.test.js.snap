@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card test suite Renders the Card correctly 1`] = `
+<div
+  className="makeStyles-card-1"
+/>
+`;
+
+exports[`Card test suite Renders the CardAvatar correctly 1`] = `
+<div
+  className="makeStyles-cardAvatar-5"
+>
+  <p>
+    Hey
+  </p>
+</div>
+`;
+
+exports[`Card test suite Renders the CardBody correctly 1`] = `
+<div
+  className="makeStyles-cardBody-8"
+/>
+`;
+
+exports[`Card test suite Renders the CardFooter correctly 1`] = `
+<div
+  className="makeStyles-cardFooter-11"
+/>
+`;
+
+exports[`Card test suite Renders the CardHeader correctly 1`] = `
+<div
+  className="makeStyles-cardHeader-16"
+/>
+`;
+
+exports[`Card test suite Renders the CardIcon correctly 1`] = `
+<div
+  className="makeStyles-cardIcon-26"
+/>
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  className="makeStyles-card-1"
+/>
+`;
