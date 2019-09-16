@@ -17,7 +17,7 @@ const useStyles = makeStyles(projectTileStyle);
 export default () => {
     const classes = useStyles();
         return (
-        <GridItem xs={12} sm={6} md={3}>
+        <GridItem xs={3} sm={3} md={4}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
@@ -30,9 +30,6 @@ export default () => {
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Danger>
-                    <Warning />
-                  </Danger>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
                     Get more space
                   </a>

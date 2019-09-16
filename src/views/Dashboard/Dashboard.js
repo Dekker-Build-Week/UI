@@ -9,6 +9,11 @@ export default function Dashboard() {
     <div>
       <GridContainer>
         <ProjectTile />
+        <ProjectTile />
+        <ProjectTile />
+        <ProjectTile />
+        <ProjectTile />
+        <ProjectTile />
       </GridContainer>
     </div>
   );

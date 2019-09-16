@@ -8,6 +8,9 @@ const projectTileStyle = {
         display: "inline-flex",
         fontSize: "12px",
         lineHeight: "22px",
+        minHeight: "200px",
+        maxHeight: "200px",
+        overflow: "hidden",
         "& svg": {
           top: "4px",
           width: "16px",
