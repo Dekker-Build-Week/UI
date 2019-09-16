@@ -4,16 +4,24 @@ import React from "react";
 import GridContainer from "components/Grid/GridContainer.js";
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 
-export default function Dashboard() {
+import  {
+  ProjectInformation
+ } from '../../variables/projects';
+
+export default () => {
   return (
     <div>
       <GridContainer>
-        <ProjectTile />
-        <ProjectTile />
-        <ProjectTile />
-        <ProjectTile />
-        <ProjectTile />
-        <ProjectTile />
+        {ProjectInformation.map((projInfo) => {
+          return (
+            <ProjectTile 
+              projectTitle = {projInfo.projectTitle} 
+              clientName = {projInfo.clientName}
+              team = {projInfo.team}
+              clientLogo = {projInfo.clientLogo}
+              images = {projInfo.images} />
+          )
+        })}
       </GridContainer>
     </div>
   );

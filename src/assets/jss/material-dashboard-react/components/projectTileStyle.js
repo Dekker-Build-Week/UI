@@ -1,5 +1,7 @@
 import {
-    grayColor
+    grayColor,
+    hexToRgb,
+    blackColor
   } from "assets/jss/material-dashboard-react.js";
 
 const projectTileStyle = {
@@ -43,6 +45,14 @@ const projectTileStyle = {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
         textDecoration: "none"
+      },
+      clientLogo: {
+        height: "80px",
+        boxShadow: "0 4px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
+        borderRadius: "3px",
+        marginTop: "-20px",
+        marginRight: "15px",
+        float: "left"
       }
 };
 

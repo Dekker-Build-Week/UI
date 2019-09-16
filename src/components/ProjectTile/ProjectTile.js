@@ -1,41 +1,49 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import GridItem from "components/Grid/GridItem.js";
-import Danger from "components/Typography/Danger.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
 
-import Warning from "@material-ui/icons/Warning";
-import Icon from "@material-ui/core/Icon";
-
 const useStyles = makeStyles(projectTileStyle);
 
-export default (props) => {
+const ProjectTile = (props) => {
     const classes = useStyles();
-        return (
+
+    const { projectTitle, clientName, team, clientLogo, images } = props;
+
+    return (
         <GridItem xs={3} sm={3} md={4}>
             <Card>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
-                  <Icon>content_copy</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+              <CardHeader stats icon>
+                <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
+                <p className={classes.cardCategory}>{projectTitle}</p>
                 <h3 className={classes.cardTitle}>
-                  49/50
+                  {clientName}
                 </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
+                    
                   </a>
                 </div>
               </CardFooter>
             </Card>
         </GridItem>
         );
-    }
+}
+
+ProjectTile.propTypes = {
+  projectTitle : PropTypes.string.isRequired,
+  clientName : PropTypes.string.isRequired,
+  team : PropTypes.arrayOf(PropTypes.object).isRequired,
+  clientLogo : PropTypes.object.isRequired,
+  images : PropTypes.arrayOf(PropTypes.object)
+}
+
+export default ProjectTile;
