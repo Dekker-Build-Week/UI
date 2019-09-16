@@ -12,7 +12,7 @@ export default () => {
   return (
     <div>
       <GridContainer>
-        {ProjectInformation.map((projInfo) => {
+        {ProjectInformation.concat(ProjectInformation).map((projInfo) => {
           return (
             <ProjectTile 
               projectTitle = {projInfo.projectTitle} 

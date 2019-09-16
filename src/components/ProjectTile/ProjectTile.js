@@ -16,7 +16,11 @@ const useStyles = makeStyles(projectTileStyle);
 const ProjectTile = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo } = props;
+    const { projectTitle, clientName, team, clientLogo, images } = props;
+
+    let coverImage = images.find((image) => {
+        return image.position === 0
+    });
 
     return (
         <GridItem xs={3} sm={3} md={4}>
@@ -29,7 +33,7 @@ const ProjectTile = (props) => {
                 </h3>
               </CardHeader>
               <CardBody className = {classes.cardBody}>
-                <p>Hey</p>
+                <img src = {coverImage.source} className = {classes.StyleMyBitchUp} />
               </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>

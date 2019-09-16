@@ -16,6 +16,8 @@ import andi11 from './images/andis/011.jpg';
 import andi12 from './images/andis/012.jpg';
 import andi13 from './images/andis/013.jpg';
 
+import overviewImage from './images/overview-image.jpg';
+
 export const ProjectInformation = [
     {
         "projectTitle" : "PeerPoint",
@@ -44,7 +46,12 @@ export const ProjectInformation = [
                 "ANDiPhoto" : andi5
             }
         ],
-        "images" : [ "image1", "image2" ]
+        "images" : [
+            {
+                "source" : overviewImage,
+                "position" : 0 //this is the cover image
+            }
+         ]
     },
     {
         "projectTitle" : "Vogue Runway App",
@@ -69,7 +76,12 @@ export const ProjectInformation = [
                 "ANDiPhoto" : andi9
             },
         ],
-        "images" : [ "image1", "image2" ]
+        "images" : [
+            {
+                "source" : overviewImage,
+                "position" : 0 //this is the cover image
+            }
+         ]
     },
     {
         "projectTitle" : "WIMO",
@@ -98,6 +110,11 @@ export const ProjectInformation = [
                 "ANDiPhoto" : andi13
             }
         ],
-        "images" : [ "image1", "image2" ]
+        "images" : [
+            {
+                "source" : overviewImage,
+                "position" : 0 //this is the cover image
+            }
+         ]
     }
 ]

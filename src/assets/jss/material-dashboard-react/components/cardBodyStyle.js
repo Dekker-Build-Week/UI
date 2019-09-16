@@ -3,8 +3,7 @@ const cardBodyStyle = {
     padding: "0.9375rem 20px",
     flex: "1 1 auto",
     WebkitBoxFlex: "1",
-    position: "relative",
-    minHeight: "100px"
+    position: "relative"
   },
   cardBodyPlain: {
     paddingLeft: "5px",

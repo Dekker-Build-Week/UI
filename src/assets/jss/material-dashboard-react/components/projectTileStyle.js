@@ -54,12 +54,19 @@ const projectTileStyle = {
       },
       cardBody : {
         borderTop: "1px solid " + grayColor[10],
-        marginTop: "20px",  
         marginLeft : "3px",
+        height: "195px",
+        textAlign: "center",
         marginRight : "3px"
       },
       ANDiList : {
         listStyle : "none"
+      },
+      StyleMyBitchUp : {
+        maxHeight : "100%",
+        marginLeft : "auto",        
+        marginRight : "auto",
+        textAlign: "center"
       }
 };
 
