@@ -14,14 +14,13 @@ const appStyle = theme => ({
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${drawerWidth}px)`
     },
-    overflow: "auto",
+    overflow: "hidden",
     position: "relative",
     ...transition,
     maxHeight: "100%",
     marginLeft : "auto",
     marginRight : "auto",
     width: "100%",
-    overflowScrolling: "touch"
   },
   content: {
     marginTop: "70px",
