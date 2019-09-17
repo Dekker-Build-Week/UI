@@ -1,8 +1,3 @@
-import {
-    blackColor,
-    hexToRgb
-  } from "assets/jss/material-dashboard-react.js";
-
 const techStackStyle = {
     techStack : {
         height: "30px",
