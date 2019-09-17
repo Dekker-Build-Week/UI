@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid test suite Renders a GridContainer with GridItems correctly 1`] = `
+<div
+  className="MuiGrid-root makeStyles-grid-1 MuiGrid-container"
+>
+  <div
+    className="MuiGrid-root makeStyles-grid-105 MuiGrid-item"
+  />
+</div>
+`;
+
+exports[`Grid test suite Renders the GridContainer correctly 1`] = `
+<div
+  className="MuiGrid-root makeStyles-grid-1 MuiGrid-container"
+/>
+`;
+
+exports[`Grid test suite Renders the GridItem correctly 1`] = `
+<div
+  className="MuiGrid-root makeStyles-grid-105 MuiGrid-item"
+/>
+`;

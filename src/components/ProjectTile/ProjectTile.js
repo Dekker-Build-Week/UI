@@ -23,7 +23,7 @@ const ProjectTile = (props) => {
     });
 
     return (
-        <GridItem xs={3} sm={3} md={4}>
+        <GridItem xs={12} sm={12} md={4}>
             <Card>
               <CardHeader stats icon>
                 <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
