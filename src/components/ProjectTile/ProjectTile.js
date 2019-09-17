@@ -2,23 +2,64 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import FittedImage from 'react-fitted-image';
+import { useSpring, animated } from 'react-spring';
 
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
+import CardBody from 'components/Card/CardBody';
+
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
-import CardBody from 'components/Card/CardBody';
+
+import ProjectView from '../ProjectView/ProjectView.js';
 import ANDiPhotoIcon from './ANDiPhotoIcon';
 import TechStackIcon from './TechStackIcon';
 
 const useStyles = makeStyles(projectTileStyle);
 
+const Fade = React.forwardRef(function Fade(props, ref) {
+  const { in: open, children, onEnter, onExited, ...other } = props;
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: open ? 1 : 0 },
+    onStart: () => {
+      if (open && onEnter) {
+        onEnter();
+      }
+    },
+    onRest: () => {
+      if (!open && onExited) {
+        onExited();
+      }
+    },
+  });
+
+  return (
+    <animated.div ref={ref} style={style} {...other}>
+      {children}
+    </animated.div>
+  );
+});
+
 const ProjectTile = (props) => {
     const classes = useStyles();
 
     const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
 
     let coverImage = images.find((image) => {
         return image.position === 0
@@ -29,7 +70,7 @@ const ProjectTile = (props) => {
             <Card>
               <CardHeader stats icon>
                 <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
-                <p className={classes.cardCategory}>{clientName}</p>
+                <p></p>
                 <h3 className={classes.cardTitle}>
                   {projectTitle}
                 </h3>
@@ -42,6 +83,30 @@ const ProjectTile = (props) => {
                    onError={(...args) => console.log(...args)}
                    src={coverImage.source}
                  />
+                  <button type="button" onClick={handleOpen}>
+                     Open
+                  </button>
+                 <Modal
+                      aria-labelledby="spring-modal-title"
+                      aria-describedby="spring-modal-description"
+                      className={classes.modal}
+                      open={open}
+                      onClose={handleClose}
+                      closeAfterTransition
+                      BackdropComponent={Backdrop}
+                      BackdropProps={{
+                        timeout: 500
+                      }}
+                    >
+                      <Fade in={open}>
+                        <ProjectView 
+                          projectTitle = {projectTitle} 
+                          clientName = {clientName} 
+                          clientLogo = {clientLogo} 
+                          techStack = {techStacks}
+                          team = {team}/>
+                      </Fade>
+                    </Modal>
               </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -52,7 +117,6 @@ const ProjectTile = (props) => {
                         return (
                           <ANDiPhotoIcon
                             ANDiPhoto = {andi.ANDiPhoto} />
-
                         )
                       })
                       :
@@ -60,7 +124,6 @@ const ProjectTile = (props) => {
                         return (
                           <TechStackIcon
                             techStack = {tech.image} />
-
                         )
                       })
                     }

@@ -27,14 +27,6 @@ const projectTileStyle = {
           marginLeft: "3px"
         }
       },
-      cardCategory: {
-        color: grayColor[0],
-        margin: "0",
-        fontSize: "14px",
-        marginTop: "0",
-        paddingTop: "10px",
-        marginBottom: "0"
-      },
       cardTitle: {
         color: "red",
         marginTop: "0px",
@@ -43,6 +35,9 @@ const projectTileStyle = {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
         textDecoration: "none"
+      },
+      divider : {
+        border: "1px solid black"
       },
       clientLogo: {
         height: "80px",
@@ -61,6 +56,11 @@ const projectTileStyle = {
       },
       ANDiList : {
         listStyle : "none"
+      },
+      modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }
 };
 
