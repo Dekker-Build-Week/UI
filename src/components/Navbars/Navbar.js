@@ -10,9 +10,9 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerStyle.js";
 
-const useStyles = makeStyles(styles);
+import logoImage from "./logo.png";
 
-const logoImageUrl = "https://static.andigital.com/new-logos/ANDigital_LOGO_LONG_RGB_ON_WHITE.png";
+const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
@@ -29,7 +29,7 @@ export default function Header(props) {
         <div className={classes.flex}>
           {/* Here we create navbar brand, based on route name */}
           <Button color="transparent" href="#" className={classes.title}>
-            <img src = {logoImageUrl} alt = "Company Logo" className = {classes.logoImage} />
+            <img src = {logoImage} alt = "Company Logo" className = {classes.logoImage} />
           </Button>
         </div>
       </Toolbar>
