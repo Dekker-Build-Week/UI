@@ -16,8 +16,6 @@ import andi11 from './images/andis/011.jpg';
 import andi12 from './images/andis/012.jpg';
 import andi13 from './images/andis/013.jpg';
 
-import overviewImage from './images/overview-image.jpg';
-
 import android from './images/techStacks/android.png';
 import aws from './images/techStacks/aws.png';
 import azure from './images/techStacks/azure.jpg';
@@ -34,6 +32,14 @@ import swift from './images/techStacks/swift.png';
 
 import vogue1 from './images/site_images/vogue1.jpeg';
 import vogue2 from './images/site_images/vogue2.jpg';
+import wimo1 from './images/site_images/wimo1.png';
+import wimo2 from './images/site_images/wimo2.png';
+import wimo3 from './images/site_images/wimo3.png';
+import peerpoint1 from './images/site_images/peerpoint1.jpg';
+import peerpoint2 from './images/site_images/peerpoint2.jpg';
+import peerpoint3 from './images/site_images/peerpoint3.jpg';
+import peerpoint4 from './images/site_images/peerpoint4.jpg';
+import peerpoint5 from './images/site_images/peerpoint5.jpg';
 
 export const ProjectInformation = [
     {
@@ -97,8 +103,24 @@ export const ProjectInformation = [
         ],
         "images" : [
             {
-                "source" : overviewImage,
+                "source" : peerpoint1,
                 "position" : 0 //this is the cover image
+            },
+            {
+                "source" : peerpoint2,
+                "position" : 1 //this is the cover image
+            },
+            {
+                "source" : peerpoint3,
+                "position" : 2 //this is the cover image
+            },
+            {
+                "source" : peerpoint4,
+                "position" : 3 //this is the cover image
+            },
+            {
+                "source" : peerpoint5,
+                "position" : 4 //this is the cover image
             }
          ]
     },
@@ -229,8 +251,16 @@ export const ProjectInformation = [
         ],
         "images" : [
             {
-                "source" : overviewImage,
+                "source" : wimo1,
                 "position" : 0 //this is the cover image
+            },
+            {
+                "source" : wimo2,
+                "position" : 1
+            },
+            {
+                "source" : wimo3,
+                "position" : 2
             }
          ]
     }
