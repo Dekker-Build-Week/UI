@@ -104,6 +104,7 @@ const ProjectTile = (props) => {
                           clientName = {clientName} 
                           clientLogo = {clientLogo} 
                           techStack = {techStacks}
+                          images = {images}
                           team = {team}/>
                       </Fade>
                     </Modal>
@@ -113,16 +114,18 @@ const ProjectTile = (props) => {
                   <ul className = {classes.ANDiList}>
                     {
                       isTeam ?
-                      team.map((andi) => {
+                      team.map((andi, index) => {
                         return (
                           <ANDiPhotoIcon
+                            key = {index}
                             ANDiPhoto = {andi.ANDiPhoto} />
                         )
                       })
                       :
-                      techStacks.filter(t => t.important).map((tech) => {
+                      techStacks.filter(t => t.important).map((tech, index) => {
                         return (
                           <TechStackIcon
+                            key = {index}
                             techStack = {tech.image} />
                         )
                       })
@@ -139,7 +142,7 @@ ProjectTile.propTypes = {
   projectTitle : PropTypes.string.isRequired,
   clientName : PropTypes.string.isRequired,
   team : PropTypes.arrayOf(PropTypes.object).isRequired,
-  clientLogo : PropTypes.object.isRequired,
+  clientLogo : PropTypes.string.isRequired,
   images : PropTypes.arrayOf(PropTypes.object),
   techStackss : PropTypes.arrayOf(PropTypes.object)
 }

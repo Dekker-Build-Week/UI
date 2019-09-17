@@ -13,9 +13,10 @@ export default () => {
     <div>
       <GridContainer>
         {
-          ProjectInformation.map((projInfo) => {
+          ProjectInformation.map((projInfo, index) => {
           return (
             <ProjectTile
+              key = {index}
               projectTitle = {projInfo.projectTitle}
               team = {projInfo.team}
               clientLogo = {projInfo.clientLogo}
@@ -27,12 +28,14 @@ export default () => {
           })
         }
         {
-          ProjectInformation.map((projInfo) => {
+          ProjectInformation.map((projInfo, index) => {
           return (
             <ProjectTile
+              key = {index}
               projectTitle = {projInfo.projectTitle}
               team = {projInfo.team}
               clientLogo = {projInfo.clientLogo}
+              clientName = {projInfo.clientName}
               images = {projInfo.images}
               techStacks = {projInfo.techStacks}
               isTeam = {true} />

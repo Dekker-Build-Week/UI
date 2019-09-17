@@ -7,13 +7,14 @@ import CardBody from 'components/Card/CardBody';
 import projectViewStyle from 'assets/jss/material-dashboard-react/components/projectViewStyle.js';
 import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
+import ImageSlider from './ImageSlider/ImageSlider';
 
 const useStyles = makeStyles(projectViewStyle);
 
 const ProjectView = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images, techStacks } = props;
+    const { projectTitle, clientName, clientLogo, images } = props;
 
     return (
         <div className = {classes.projectView}>
@@ -28,12 +29,12 @@ const ProjectView = (props) => {
               <CardBody className = {classes.cardBody}>
                   <div className={classes.projectInfo}>
                     <GridContainer>
-                    <GridItem xs={12} sm={12} md={6}>
+                      <GridItem xs={12} sm={12} md={6}>
+                          <ImageSlider images = {images} />
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={6}>
 
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={6}>
-
-                    </GridItem>
+                      </GridItem>
                     </GridContainer>
                 </div>
               </CardBody>

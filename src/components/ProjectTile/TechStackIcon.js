@@ -19,7 +19,7 @@ const TechStackIcon = (props) => {
 }
 
 TechStackIcon.propTypes = {
-    TechStack : PropTypes.object.isRequired
+    techStack : PropTypes.string.isRequired
 }
 
 export default TechStackIcon;
