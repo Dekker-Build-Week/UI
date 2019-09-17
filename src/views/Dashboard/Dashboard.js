@@ -12,15 +12,32 @@ export default () => {
   return (
     <div>
       <GridContainer>
-        {ProjectInformation.concat(ProjectInformation).map((projInfo) => {
+        {
+          ProjectInformation.map((projInfo) => {
           return (
             <ProjectTile
-              projectTitle = {projInfo.projectTitle} 
+              projectTitle = {projInfo.projectTitle}
               team = {projInfo.team}
               clientLogo = {projInfo.clientLogo}
-              images = {projInfo.images} />
+              images = {projInfo.images}
+              techStacks = {projInfo.techStacks}
+              isTeam = {false} />
           )
-        })}
+          })
+        }
+        {
+          ProjectInformation.map((projInfo) => {
+          return (
+            <ProjectTile
+              projectTitle = {projInfo.projectTitle}
+              team = {projInfo.team}
+              clientLogo = {projInfo.clientLogo}
+              images = {projInfo.images}
+              techStacks = {projInfo.techStacks}
+              isTeam = {true} />
+          )
+          })
+        }
       </GridContainer>
     </div>
   );

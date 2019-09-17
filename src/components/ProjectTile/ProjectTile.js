@@ -10,14 +10,15 @@ import CardFooter from "components/Card/CardFooter.js";
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
 import CardBody from 'components/Card/CardBody';
-import ANDiPhotoTile from './ANDiPhoto';
+import ANDiPhotoTile from './ANDiPhoto.js';
+import TechStackTile from './techStack.js';
 
 const useStyles = makeStyles(projectTileStyle);
 
 const ProjectTile = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images } = props;
+    const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
 
     let coverImage = images.find((image) => {
         return image.position === 0
@@ -35,24 +36,34 @@ const ProjectTile = (props) => {
               </CardHeader>
               <CardBody className = {classes.cardBody}>
                 <FittedImage
-                    fit="cover"
-                    loader={<div>Loading</div>}
-                    onLoad={(...args) => console.log(...args)}
-                    onError={(...args) => console.log(...args)}
-                    src={coverImage.source}
-                  />
+                   fit="cover"
+                   loader={<div>Loading</div>}
+                   onLoad={(...args) => console.log(...args)}
+                   onError={(...args) => console.log(...args)}
+                   src={coverImage.source}
+                 />
               </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>
                   <ul className = {classes.ANDiList}>
-                  {
-                    team.map((andi) => {
-                      return (
-                        <ANDiPhotoTile 
-                          ANDiPhoto = {andi.ANDiPhoto} />
-                      )
-                    })
-                  }
+                    {
+                      isTeam ?
+                      team.map((andi) => {
+                        return (
+                          <ANDiPhotoTile
+                            ANDiPhoto = {andi.ANDiPhoto} />
+
+                        )
+                      })
+                      :
+                      techStacks.map((tech) => {
+                        return (
+                          <TechStackTile
+                            techStack = {tech.image} />
+
+                        )
+                      })
+                    }
                   </ul>
                 </div>
               </CardFooter>
@@ -66,7 +77,8 @@ ProjectTile.propTypes = {
   clientName : PropTypes.string.isRequired,
   team : PropTypes.arrayOf(PropTypes.object).isRequired,
   clientLogo : PropTypes.object.isRequired,
-  images : PropTypes.arrayOf(PropTypes.object)
+  images : PropTypes.arrayOf(PropTypes.object),
+  techStackss : PropTypes.arrayOf(PropTypes.object)
 }
 
 export default ProjectTile;
