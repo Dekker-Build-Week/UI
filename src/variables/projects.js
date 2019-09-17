@@ -1,6 +1,6 @@
-import AllenOveryLogo from './images/allen-overy-logo.jpg';
-import BestwayLogo from './images/bestway.png';
-import CondeLogo from './images/conde.png';
+import AllenOveryLogo from './images/clientLogos/allen-overy-logo.jpg';
+import BestwayLogo from './images/clientLogos/bestway.png';
+import CondeLogo from './images/clientLogos/conde.png';
 
 import andi1 from './images/andis/001.jpg';
 import andi2 from './images/andis/002.jpg';
@@ -31,6 +31,9 @@ import mysql from './images/techStacks/mysql.png';
 import nodejs from './images/techStacks/nodejs.jpg';
 import reactjs from './images/techStacks/reactjs.png';
 import swift from './images/techStacks/swift.png';
+
+import vogue1 from './images/site_images/vogue1.jpeg';
+import vogue2 from './images/site_images/vogue2.jpg';
 
 export const ProjectInformation = [
     {
@@ -156,8 +159,12 @@ export const ProjectInformation = [
         ],
         "images" : [
             {
-                "source" : overviewImage,
-                "position" : 0 //this is the cover image
+                "source" : vogue2,
+                "position" : 0 // cover
+            },
+            {
+                "source" : vogue1,
+                "position" : 1
             }
          ]
     },
