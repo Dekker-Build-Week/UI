@@ -50,6 +50,10 @@ const ProjectTile = (props) => {
     const classes = useStyles();
 
     const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
+    console.log("THIS IS THE TECH STACK OBJECT");
+    
+    console.log(techStacks);
+    
 
     const [open, setOpen] = React.useState(false);
 

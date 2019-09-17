@@ -7,13 +7,15 @@ import CardBody from 'components/Card/CardBody';
 import projectViewStyle from 'assets/jss/material-dashboard-react/components/projectViewStyle.js';
 import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
+import ANDiPhotoIcon from '../ProjectTile/ANDiPhotoIcon';
+import TechStackIcon from '../ProjectTile/TechStackIcon';
 
 const useStyles = makeStyles(projectViewStyle);
 
 const ProjectView = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images, techStacks } = props;
+    const { projectTitle, clientName, team, clientLogo, images, techStack } = props;
 
     return (
         <div className = {classes.projectView}>
@@ -38,6 +40,14 @@ const ProjectView = (props) => {
                 </div>
               </CardBody>
               <CardFooter stats>
+                {
+                  techStack.map((tech) => {
+                    return (
+                      <TechStackIcon
+                        techStack = {tech.image} />
+                    )
+                  })
+                }
               </CardFooter>
             </Card>
         </div>
