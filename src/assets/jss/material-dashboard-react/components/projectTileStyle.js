@@ -55,18 +55,12 @@ const projectTileStyle = {
       cardBody : {
         borderTop: "1px solid " + grayColor[10],
         marginLeft : "3px",
-        height: "194px",
+        height: "200px",
         textAlign: "center",
         marginRight : "3px"
       },
       ANDiList : {
         listStyle : "none"
-      },
-      userJourney : {
-        maxHeight : "100%",
-        marginLeft : "auto",        
-        marginRight : "auto",
-        textAlign: "center"
       }
 };
 

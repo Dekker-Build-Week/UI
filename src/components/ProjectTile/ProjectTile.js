@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import FittedImage from 'react-fitted-image';
 
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
@@ -33,7 +34,13 @@ const ProjectTile = (props) => {
                 </h3>
               </CardHeader>
               <CardBody className = {classes.cardBody}>
-                <img src = {coverImage.source} alt = "User Journey" className = {classes.userJourney} />
+                <FittedImage
+                    fit="cover"
+                    loader={<div>Loading</div>}
+                    onLoad={(...args) => console.log(...args)}
+                    onError={(...args) => console.log(...args)}
+                    src={coverImage.source}
+                  />
               </CardBody>
               <CardFooter stats>
                 <div className={classes.stats}>
