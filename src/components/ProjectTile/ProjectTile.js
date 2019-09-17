@@ -10,8 +10,8 @@ import CardFooter from "components/Card/CardFooter.js";
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
 import CardBody from 'components/Card/CardBody';
-import ANDiPhotoTile from './ANDiPhoto.js';
-import TechStackTile from './techStack.js';
+import ANDiPhotoIcon from './ANDiPhotoIcon';
+import TechStackIcon from './TechStackIcon';
 
 const useStyles = makeStyles(projectTileStyle);
 
@@ -50,15 +50,15 @@ const ProjectTile = (props) => {
                       isTeam ?
                       team.map((andi) => {
                         return (
-                          <ANDiPhotoTile
+                          <ANDiPhotoIcon
                             ANDiPhoto = {andi.ANDiPhoto} />
 
                         )
                       })
                       :
-                      techStacks.map((tech) => {
+                      techStacks.filter(t => t.important).map((tech) => {
                         return (
-                          <TechStackTile
+                          <TechStackIcon
                             techStack = {tech.image} />
 
                         )

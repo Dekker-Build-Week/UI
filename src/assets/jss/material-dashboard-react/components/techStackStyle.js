@@ -5,9 +5,7 @@ import {
 
 const techStackStyle = {
     techStack : {
-        borderRadius : "50px",
         height: "30px",
-        boxShadow: "0px 3px 4px 0px rgba(" + hexToRgb(blackColor) + ", 0.14)",
     },
     techList : {
         listStyle : "none",
