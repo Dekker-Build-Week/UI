@@ -14,9 +14,8 @@ export default () => {
       <GridContainer>
         {ProjectInformation.concat(ProjectInformation).map((projInfo) => {
           return (
-            <ProjectTile 
+            <ProjectTile
               projectTitle = {projInfo.projectTitle} 
-              clientName = {projInfo.clientName}
               team = {projInfo.team}
               clientLogo = {projInfo.clientLogo}
               images = {projInfo.images} />
