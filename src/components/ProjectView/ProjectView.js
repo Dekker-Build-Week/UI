@@ -7,23 +7,16 @@ import CardBody from 'components/Card/CardBody';
 import projectViewStyle from 'assets/jss/material-dashboard-react/components/projectViewStyle.js';
 import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
-<<<<<<< HEAD
-import ImageSlider from './ImageSlider/ImageSlider';
-=======
-import ANDiPhotoIcon from '../ProjectTile/ANDiPhotoIcon';
+import ImageSlider from "components/ProjectView/ImageSlider/ImageSlider";
+
 import TechStackIcon from '../ProjectTile/TechStackIcon';
->>>>>>> origin/footerChange
 
 const useStyles = makeStyles(projectViewStyle);
 
 const ProjectView = (props) => {
     const classes = useStyles();
 
-<<<<<<< HEAD
-    const { projectTitle, clientName, clientLogo, images } = props;
-=======
-    const { projectTitle, clientName, team, clientLogo, images, techStack } = props;
->>>>>>> origin/footerChange
+    const { projectTitle, clientName, clientLogo, images, techStack } = props;
 
     return (
         <div className = {classes.projectView}>
@@ -39,7 +32,7 @@ const ProjectView = (props) => {
                   <div className={classes.projectInfo}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={6}>
-                          <ImageSlider images = {images} />
+                          <ImageSlider />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={6}>
 
@@ -48,14 +41,6 @@ const ProjectView = (props) => {
                 </div>
               </CardBody>
               <CardFooter stats>
-                {
-                  techStack.map((tech) => {
-                    return (
-                      <TechStackIcon
-                        techStack = {tech.image} />
-                    )
-                  })
-                }
               </CardFooter>
             </Card>
         </div>

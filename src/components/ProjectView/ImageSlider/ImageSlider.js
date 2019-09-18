@@ -9,10 +9,6 @@ const useStyles = makeStyles(imageSliderStyle);
 export default (props) => {
     const classes = useStyles();
 
-    const { images } = props;
-
-    console.log(images);
-    
     const springProps = useSpring({
         from: { left: '0%', top: '0%', width: '0%', height: '0%', background: 'lightgreen' },
         to: async next => {

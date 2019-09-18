@@ -10,7 +10,6 @@ import {
   whiteColor,
   grayColor
 } from "assets/jss/material-dashboard-react.js";
-import { red } from "@material-ui/core/colors";
 
 const headerStyle = () => ({
   appBar: {
