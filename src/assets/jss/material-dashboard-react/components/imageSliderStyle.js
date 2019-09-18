@@ -1,32 +1,15 @@
 
 const imageSliderStyle = {
-    imageSliderContainer: {
-        width: "50%",
-        height: "50%",
-        marginLeft : "5px",
-        willChange: "transform",
-        overflow : "hidden",
-        overscrollBehaviourY: "hidden",
-        margin: "0",
-        padding: "0",
-        fontFamily: "-apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif",
-        position: "fixed"
+    scriptBox : {
+      willChange: "width, height, left, top",
+      position: "relative"
     },
-    image : {
-      backgroundSize : "cover",
-      backgroundRepeat : "no-repeat",
-      backgroundPosition : "center",
-      width : "100%",
-      height : "100%",
-      willChange : "transform",
-      boxShadow : "0 62.5px 125px -25px rgba(50, 50, 73, 0.5), 0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6)"
-    },
-    container : {
-      userSelect : "none",
-      cursor : "-webkit-grab",
-      "& :active" : {
-        cursor : "-webkit-grabbing"
-      }
+    root : {
+      background: "#f0f0f0",
+      overflow: "hidden",
+      position: "relative",
+      width: "400px",
+      height: "400px"
     }
 }
 

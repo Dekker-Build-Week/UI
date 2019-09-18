@@ -1,73 +1,38 @@
-import React, { useRef } from 'react'
-import clamp from 'lodash-es/clamp'
-import { useSprings, animated } from 'react-spring'
-import { useGesture, useHover } from 'react-use-gesture'
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import imageSliderStyle from 'assets/jss/material-dashboard-react/components/imageSliderStyle.js';
+import { useSpring, animated } from 'react-spring'
+
+import imageSliderStyle from 'assets/jss/material-dashboard-react/components/imageSliderStyle.js'
 
 const useStyles = makeStyles(imageSliderStyle);
 
-const ViewPager = (props) => {
-    const index = useRef(0);
+export default (props) => {
     const classes = useStyles();
-    const windowBoundsWidth = (window.innerWidth);
 
     const { images } = props;
 
-    const [springProps, set] = useSprings(
-      images ? images.length : 0,
-       i => ({ 
-           x: i * windowBoundsWidth, 
-           sc: 1, 
-           display: 'block' 
-        })
-    )
-
-    const bind = useGesture(
-      ({ 
-        down, 
-        delta: [xDelta], 
-        direction: [xDir], 
-        distance, 
-        cancel }) => {
-            if (down && distance > windowBoundsWidth / 2)
-                cancel((index.current = clamp(index.current + (xDir > 0 ? -1 : 1), 0, images.length - 1)))
-                set(i => {
-                    if (i < index.current - 1 || i > index.current + 1) 
-                        return { display: 'none' }
-
-                    const x = (i - index.current) * windowBoundsWidth + (down ? xDelta : 0)
-
-                    const sc = down ? 1 - distance / windowBoundsWidth / 4 : 1
-
-                    return { x, sc, display: 'block' }
-                })
+    console.log(images);
+    
+    const springProps = useSpring({
+        from: { left: '0%', top: '0%', width: '0%', height: '0%', background: 'lightgreen' },
+        to: async next => {
+        while (1) {
+            await next({ left: '0%', top: '0%', width: '100%', height: '100%', background: 'lightblue' })
+            await next({ height: '50%', background: 'lightgreen' })
+            await next({ width: '50%', left: '50%', background: 'lightgoldenrodyellow' })
+            await next({ top: '0%', height: '100%', background: 'lightpink' })
+            await next({ top: '50%', height: '50%', background: 'lightsalmon' })
+            await next({ width: '100%', left: '0%', background: 'lightcoral' })
+            await next({ width: '50%', background: 'lightseagreen' })
+            await next({ top: '0%', height: '100%', background: 'lightskyblue' })
+            await next({ width: '100%', background: 'lightslategrey' })
+        }
+        },
     })
-
-    return springProps.map(({ x, display, sc }, i) => (
-        <div className = {classes.container}>
-            <animated.div 
-                {...bind()} 
-                key={i} 
-                className = {classes.imageSliderContainer}
-                style={
-                {
-                    display, 
-                    transform: x.interpolate(x => `translate3d(${x}px,0,0)`) 
-                }
-                }>
-                <animated.div 
-                    style={
-                        { 
-                        transform: sc.interpolate(s => `scale(${s})`)
-                        }
-                    }
-                    className = {classes.image}>
-                        <img src = {images[i].source} alt = "Client Logo" key = {i} />                
-                </animated.div>
-            </animated.div>
+    return (
+        <div className = {classes.root}>
+            <p>This</p>
+            <animated.div className={classes.scriptBox} style={springProps} />
         </div>
-    ))
+    );
 }
-
-export default ViewPager;
