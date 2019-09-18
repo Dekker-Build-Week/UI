@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -13,11 +13,10 @@ import ImageSlider from "./ImageSlider/ImageSlider";
 
 const useStyles = makeStyles(projectViewStyle);
 
-const ProjectView = (props) => {
-    const classes = useStyles();
+const ProjectView = props => {
+  const classes = useStyles();
 
     const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack } = props;
-
 
     return (
         <div className = {classes.projectView}>
@@ -70,6 +69,5 @@ const ProjectView = (props) => {
         </div>
     );
 }
-
 
 export default ProjectView;

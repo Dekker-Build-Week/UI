@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 
-import PropTypes from 'prop-types';
-import FittedImage from 'react-fitted-image';
-import { useSpring, animated } from 'react-spring';
+import PropTypes from "prop-types";
+import FittedImage from "react-fitted-image";
+import { useSpring, animated } from "react-spring";
 
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
-import CardBody from 'components/Card/CardBody';
+import CardBody from "components/Card/CardBody";
 
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
 
 import { makeStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
 
-import ProjectView from '../ProjectView/ProjectView.js';
-import ANDiPhotoIcon from './ANDiPhotoIcon';
-import TechStackIcon from './TechStackIcon';
+import ProjectView from "../ProjectView/ProjectView.js";
+import ANDiPhotoIcon from "./ANDiPhotoIcon";
+import TechStackIcon from "./TechStackIcon";
 
 const useStyles = makeStyles(projectTileStyle);
 
@@ -37,7 +37,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
       if (!open && onExited) {
         onExited();
       }
-    },
+    }
   });
 
   return (
@@ -142,13 +142,13 @@ const ProjectTile = (props) => {
 }
 
 ProjectTile.propTypes = {
-  projectTitle : PropTypes.string.isRequired,
-  clientName : PropTypes.string.isRequired,
-  projectDescription : PropTypes.string.isRequired,
-  team : PropTypes.arrayOf(PropTypes.object).isRequired,
-  clientLogo : PropTypes.string.isRequired,
-  images : PropTypes.arrayOf(PropTypes.object),
-  techStackss : PropTypes.arrayOf(PropTypes.object)
-}
+  projectTitle: PropTypes.string.isRequired,
+  clientName: PropTypes.string.isRequired,
+  projectDescription: PropTypes.string,
+  team: PropTypes.arrayOf(PropTypes.object).isRequired,
+  clientLogo: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.object),
+  techStackss: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default ProjectTile;
