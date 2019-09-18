@@ -64,12 +64,8 @@ class ProjectTile extends React.Component {
                 onError={(...args) => console.log(...args)}
                 src={coverImage.source}
               />
-                <button type="button" onClick={this.handleOpen}>
-                  Open
-                </button>
-                  
                   <ProjectModal 
-                    modalOpen = {this.state.modalOpen}
+                    modalOpen = {this.props.modalOpen}
                     handleClose = {this.handleClose}>
                       <ProjectView 
                         projectTitle = {projectTitle} 
