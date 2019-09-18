@@ -10,20 +10,19 @@ import {
   whiteColor,
   grayColor
 } from "assets/jss/material-dashboard-react.js";
+import { red } from "@material-ui/core/colors";
 
 const headerStyle = () => ({
   appBar: {
-    backgroundColor: "transparent",
+    backgroundColor: "#FF313B",
     boxShadow: "none",
     borderBottom: "0",
     marginBottom: "0",
-    position: "absolute",
     width: "100%",
     paddingTop: "10px",
     zIndex: "1029",
     color: grayColor[7],
     border: "0",
-    borderRadius: "3px",
     padding: "10px 0",
     transition: "all 150ms ease 0s",
     minHeight: "50px",
@@ -31,7 +30,7 @@ const headerStyle = () => ({
   },
   container: {
     ...container,
-    minHeight: "50px"
+    minHeight: "50px",
   },
   flex: {
     flex: 1
