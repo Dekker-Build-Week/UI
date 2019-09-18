@@ -35,6 +35,7 @@ import vogue2 from './images/site_images/vogue2.jpg';
 import wimo1 from './images/site_images/wimo1.png';
 import wimo2 from './images/site_images/wimo2.png';
 import wimo3 from './images/site_images/wimo3.png';
+import wimo4 from './images/site_images/wimo4.png';
 import peerpoint1 from './images/site_images/peerpoint1.jpg';
 import peerpoint2 from './images/site_images/peerpoint2.jpg';
 import peerpoint3 from './images/site_images/peerpoint3.jpg';
@@ -261,6 +262,10 @@ export const ProjectInformation = [
             {
                 "source" : wimo3,
                 "position" : 2
+            },
+            {
+                "source" : wimo4,
+                "position" : 3
             }
          ]
     }
