@@ -45,9 +45,10 @@ const ProjectView = props => {
               <CardFooter stats>
               <ul className = {classes.ANDiList}>
                 {
-                  team.map((andi) => {
+                  team.map((andi, index) => {
                     return (
                       <ANDiPhotoIconProject
+                        key = {index}
                         ANDiPhoto = {andi.ANDiPhoto} />
                     )
                   })
@@ -56,9 +57,10 @@ const ProjectView = props => {
                 <ul>
                 {
 
-                  techStack.map((tech) => {
+                  techStack.map((tech, index) => {
                     return (
                       <TechStackIconProject
+                        key = {index}
                         techStack = {tech.image} />
                     )
                   })

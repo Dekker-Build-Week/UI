@@ -19,9 +19,17 @@ export default (props) => {
         config: config.molasses,
     })
 
-    // eslint-disable-next-line
-    useEffect(() => void setInterval(() => set(state => (state + 1) % (images.length)), 4000), [])
+    useEffect(
+        () => {
+            // eslint-disable-next-line
+            const interval = setInterval(() => set(state => (state + 1) % (images.length)), 4000);
+            
+            return () => {
+                clearInterval(interval);
+            }
+        }, [])
   
+    
     return (
         <div className = {classes.root}>
             {

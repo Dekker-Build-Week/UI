@@ -19,7 +19,7 @@ const ANDiPhotoIconProject = (props) => {
 }
 
 ANDiPhotoIconProject.propTypes = {
-    ANDiPhoto : PropTypes.object.isRequired
+    ANDiPhoto : PropTypes.string.isRequired
 }
 
 export default ANDiPhotoIconProject;
