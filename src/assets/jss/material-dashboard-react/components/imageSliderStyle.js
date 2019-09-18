@@ -1,15 +1,23 @@
+import {
+  hexToRgb,
+  blackColor
+} from "assets/jss/material-dashboard-react.js";
 
 const imageSliderStyle = {
     scriptBox : {
       willChange: "width, height, left, top",
-      position: "relative"
+      position: "relative",
+      width: "100%",
+      height: "100%"
     },
     root : {
-      background: "#f0f0f0",
       overflow: "hidden",
       position: "relative",
-      width: "400px",
-      height: "400px"
+      width: "100%",
+      height: "100%",
+      marginLeft: "10px",
+      marginBottom: "10px",
+      boxShadow: "0 6px 6px 0 rgba(" + hexToRgb(blackColor) + ", 0.3)"
     }
 }
 

@@ -24,6 +24,7 @@ const useStyles = makeStyles(projectTileStyle);
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props;
+  
   const style = useSpring({
     from: { opacity: 0 },
     to: { opacity: open ? 1 : 0 },
@@ -50,11 +51,7 @@ const ProjectTile = (props) => {
     const classes = useStyles();
 
     const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
-    console.log("THIS IS THE TECH STACK OBJECT");
-    
-    console.log(techStacks);
-    
-
+   
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {

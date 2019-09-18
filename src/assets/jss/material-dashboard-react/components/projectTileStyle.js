@@ -28,7 +28,7 @@ const projectTileStyle = {
         }
       },
       cardTitle: {
-        color: "red",
+        color: "#FF313B",
         marginTop: "0px",
         minHeight: "auto",
         fontWeight: "300",

@@ -31,7 +31,7 @@ const ProjectViewStyle = {
     },
     projectTitle: {
         fontSize: "54px",
-        color: "red",
+        color: "#FF313B",
         marginTop: "0px",
         minHeight: "auto",
         fontWeight: "300",
@@ -39,9 +39,15 @@ const ProjectViewStyle = {
         marginBottom: "3px",
         textDecoration: "none"
     },
-    projectInfo: {
-        height: "600px",
+    projectBody : {
+        height : (window.innerHeight * 0.60)
     },
+    projectInfo: {
+        height: (window.innerHeight * 0.60)
+    },
+    contentContainer : {
+        height : (window.innerHeight * 0.60)
+    }
 }
 
 export default ProjectViewStyle;

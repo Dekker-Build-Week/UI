@@ -1,34 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from "@material-ui/core/styles";
-import { useSpring, animated } from 'react-spring'
-
-import imageSliderStyle from 'assets/jss/material-dashboard-react/components/imageSliderStyle.js'
+import imageSliderStyle from 'assets/jss/material-dashboard-react/components/imageSliderStyle.js';
+import { useTransition, animated, config } from 'react-spring'
 
 const useStyles = makeStyles(imageSliderStyle);
 
 export default (props) => {
     const classes = useStyles();
 
-    const springProps = useSpring({
-        from: { left: '0%', top: '0%', width: '0%', height: '0%', background: 'lightgreen' },
-        to: async next => {
-        while (1) {
-            await next({ left: '0%', top: '0%', width: '100%', height: '100%', background: 'lightblue' })
-            await next({ height: '50%', background: 'lightgreen' })
-            await next({ width: '50%', left: '50%', background: 'lightgoldenrodyellow' })
-            await next({ top: '0%', height: '100%', background: 'lightpink' })
-            await next({ top: '50%', height: '50%', background: 'lightsalmon' })
-            await next({ width: '100%', left: '0%', background: 'lightcoral' })
-            await next({ width: '50%', background: 'lightseagreen' })
-            await next({ top: '0%', height: '100%', background: 'lightskyblue' })
-            await next({ width: '100%', background: 'lightslategrey' })
-        }
-        },
+    const [index, set] = useState(0)
+
+    const { images } = props;
+
+    const transitions = useTransition(images[index], item => item.position, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: config.molasses,
     })
+
+    // eslint-disable-next-line
+    useEffect(() => void setInterval(() => set(state => (state + 1) % (images.length)), 4000), [])
+  
     return (
         <div className = {classes.root}>
-            <p>This</p>
-            <animated.div className={classes.scriptBox} style={springProps} />
+            {
+                transitions.map(({ item, props, key }) => {
+                    return (
+                        <animated.div
+                        key={key}
+                        className= {classes.scriptBox}
+                        style={{ ...props, backgroundImage: `url(${item.source})` }}
+                        />
+                    );
+                })
+            }
         </div>
-    );
+    )
 }

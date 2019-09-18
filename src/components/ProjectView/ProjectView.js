@@ -28,19 +28,30 @@ const ProjectView = (props) => {
                   {projectTitle}
                 </h3>
               </CardHeader>
-              <CardBody className = {classes.cardBody}>
+              <CardBody className = {classes.projectBody}>
                   <div className={classes.projectInfo}>
                     <GridContainer>
-                      <GridItem xs={12} sm={12} md={6}>
-                          <ImageSlider />
+                      <GridItem xs={12} sm={12} md={8}>
+                        <div className = {classes.contentContainer}>
+                          <ImageSlider images = {images} />
+                        </div>
                       </GridItem>
-                      <GridItem xs={12} sm={12} md={6}>
+                      <GridItem xs={12} sm={12} md={4}>
 
                       </GridItem>
                     </GridContainer>
                 </div>
               </CardBody>
               <CardFooter stats>
+                {
+                  techStack.map((tech, index) => {
+                    return (
+                      <TechStackIcon
+                        key = {index}
+                        techStack = {tech.image} />
+                    )
+                  })
+                }
               </CardFooter>
             </Card>
         </div>
