@@ -24,7 +24,7 @@ const useStyles = makeStyles(projectTileStyle);
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props;
-  
+
   const style = useSpring({
     from: { opacity: 0 },
     to: { opacity: open ? 1 : 0 },
@@ -50,14 +50,14 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 const ProjectTile = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
+    const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam, projectDescription } = props;
    
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
       setOpen(true);
     };
-  
+
     const handleClose = () => {
       setOpen(false);
     };
@@ -100,10 +100,12 @@ const ProjectTile = (props) => {
                       }}
                     >
                       <Fade in={open}>
+
                         <ProjectView 
                           projectTitle = {projectTitle} 
                           clientName = {clientName} 
-                          clientLogo = {clientLogo} 
+                          clientLogo = {clientLogo}
+                          projectDescription = {projectDescription}
                           techStack = {techStacks}
                           images = {images}
                           team = {team}/>
@@ -142,6 +144,7 @@ const ProjectTile = (props) => {
 ProjectTile.propTypes = {
   projectTitle : PropTypes.string.isRequired,
   clientName : PropTypes.string.isRequired,
+  projectDescription : PropTypes.string.isRequired,
   team : PropTypes.arrayOf(PropTypes.object).isRequired,
   clientLogo : PropTypes.string.isRequired,
   images : PropTypes.arrayOf(PropTypes.object),
