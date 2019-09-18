@@ -10,7 +10,7 @@ export default (props) => {
 
     const [index, set] = useState(0)
 
-    const { images } = props;
+    const { images } = props;      
 
     const transitions = useTransition(images[index], item => item.position, {
         from: { opacity: 0 },
@@ -28,9 +28,9 @@ export default (props) => {
                 transitions.map(({ item, props, key }) => {
                     return (
                         <animated.div
-                        key={key}
-                        className= {classes.scriptBox}
-                        style={{ ...props, backgroundImage: `url(${item.source})` }}
+                            key={key}
+                            className= {classes.scriptBox}
+                            style={{ ...props, backgroundImage: `url(${item.source})` }}
                         />
                     );
                 })

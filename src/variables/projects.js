@@ -194,7 +194,7 @@ export const ProjectInformation = [
         "projectTitle" : "WIMO",
         "clientName" : "Bestway",
         "clientLogo" : BestwayLogo,
-        "projectDescription" : "Vanos",
+        "projectDescription" : "",
         "team" : [
             {
                 "ANDiName" : "Gary",

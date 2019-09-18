@@ -87,20 +87,19 @@ const ProjectTile = (props) => {
                   <button type="button" onClick={handleOpen}>
                      Open
                   </button>
-                 <Modal
-                      aria-labelledby="spring-modal-title"
-                      aria-describedby="spring-modal-description"
-                      className={classes.modal}
-                      open={open}
-                      onClose={handleClose}
-                      closeAfterTransition
-                      BackdropComponent={Backdrop}
-                      BackdropProps={{
-                        timeout: 500
-                      }}
-                    >
+                    <Modal
+                          aria-labelledby="spring-modal-title"
+                          aria-describedby="spring-modal-description"
+                          className={classes.modal}
+                          open={open}
+                          onClose={handleClose}
+                          closeAfterTransition
+                          BackdropComponent={Backdrop}
+                          BackdropProps={{
+                            timeout: 500
+                          }}
+                        >
                       <Fade in={open}>
-
                         <ProjectView 
                           projectTitle = {projectTitle} 
                           clientName = {clientName} 

@@ -8,7 +8,9 @@ const imageSliderStyle = {
       willChange: "width, height, left, top",
       position: "relative",
       width: "100%",
-      height: "100%"
+      height: "100%",
+      backgroundRepeat : "no-repeat",
+      backgroundSize : "100%"
     },
     root : {
       overflow: "hidden",
