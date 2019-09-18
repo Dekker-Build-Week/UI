@@ -18,11 +18,8 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = (props) => {
     const classes = useStyles();
 
-<<<<<<< HEAD
-    const { projectTitle, clientName, projectDescription, clientLogo, images, techStack } = props;
-=======
-    const { projectTitle, clientName, team, clientLogo, images, techStack } = props;
->>>>>>> footer
+    const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack } = props;
+
 
     return (
         <div className = {classes.projectView}>
