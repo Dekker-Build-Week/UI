@@ -20,6 +20,7 @@ export default () => {
               projectTitle = {projInfo.projectTitle}
               team = {projInfo.team}
               clientLogo = {projInfo.clientLogo}
+              projectDescription = {projInfo.projectDescription}
               clientName = {projInfo.clientName}
               images = {projInfo.images}
               techStacks = {projInfo.techStacks}

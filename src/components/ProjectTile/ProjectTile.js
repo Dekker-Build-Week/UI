@@ -49,7 +49,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 const ProjectTile = (props) => {
     const classes = useStyles();
 
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam } = props;
+    const { projectTitle, clientName, projectDescription, team, clientLogo, images, techStacks, isTeam } = props;
     console.log("THIS IS THE TECH STACK OBJECT");
     
     console.log(techStacks);
@@ -106,7 +106,8 @@ const ProjectTile = (props) => {
                         <ProjectView 
                           projectTitle = {projectTitle} 
                           clientName = {clientName} 
-                          clientLogo = {clientLogo} 
+                          clientLogo = {clientLogo}
+                          projectDescription = {projectDescription}
                           techStack = {techStacks}
                           images = {images}
                           team = {team}/>
@@ -145,6 +146,7 @@ const ProjectTile = (props) => {
 ProjectTile.propTypes = {
   projectTitle : PropTypes.string.isRequired,
   clientName : PropTypes.string.isRequired,
+  projectDescription : PropTypes.string.isRequired,
   team : PropTypes.arrayOf(PropTypes.object).isRequired,
   clientLogo : PropTypes.string.isRequired,
   images : PropTypes.arrayOf(PropTypes.object),

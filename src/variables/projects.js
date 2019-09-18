@@ -46,7 +46,7 @@ export const ProjectInformation = [
         "projectTitle" : "PeerPoint",
         "clientName" : "Allen and Overy",
         "clientLogo" : AllenOveryLogo,
-        "projectDescription" : "This will be filled in by the PDL",
+        "projectDescription" : "Peerpoint is Allen & Overy’s global platform for self-directed consultant lawyers who want to access the best work, clients, bespoke support and resources. More control, choice, ch​allenge and calibre: this is the advantage we offer our self-directed consultants and what sets us apart at Peerpoint. That and our close relationship with Allen & Overy. With this, our lawyers can access high-level clients and work, and a global network of bespoke support and resources. For our clients, Peerpoint offers a way to access a panel of top tier, senior lawyers who have the skills and expertise to work with their business’ legal and compliance teams with the support of Allen & Overy.",
         "team" : [
             {            
                 "ANDiName" : "Phil Smith",

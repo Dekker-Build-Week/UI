@@ -12,6 +12,7 @@ const ProjectViewStyle = {
         boxShadow: "grey",
         padding: "2 4 3",
         marginTop: "170px",
+        
     },
     clientLogo: {
         height: "160px",
@@ -27,7 +28,9 @@ const ProjectViewStyle = {
         fontSize: "34px",
         marginTop: "15px",
         paddingTop: "10px",
-        marginBottom: "0"
+        marginBottom: "0",
+        paddingRight: "50px",
+        
     },
     projectTitle: {
         fontSize: "54px",
@@ -37,11 +40,25 @@ const ProjectViewStyle = {
         fontWeight: "300",
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
-        textDecoration: "none"
+        textDecoration: "none",
+        paddingRight: "50px",
+       
     },
     projectInfo: {
         height: "600px",
+        paddingRight: "50px",
     },
+
+    projectDescription: {
+        color: grayColor[0],
+        margin: "0",
+        fontSize: "18px",
+        marginTop: "15px",
+        paddingTop: "40px",
+        paddingRight: "40px",
+        marginBottom: "0"
+    },
+
 }
 
 export default ProjectViewStyle;
