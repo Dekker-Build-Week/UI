@@ -60,7 +60,7 @@ const ProjectTile = (props) => {
     const handleOpen = () => {
       setOpen(true);
     };
-  
+
     const handleClose = () => {
       setOpen(false);
     };
@@ -103,11 +103,18 @@ const ProjectTile = (props) => {
                       }}
                     >
                       <Fade in={open}>
+<<<<<<< HEAD
                         <ProjectView 
                           projectTitle = {projectTitle} 
                           clientName = {clientName} 
                           clientLogo = {clientLogo}
                           projectDescription = {projectDescription}
+=======
+                        <ProjectView
+                          projectTitle = {projectTitle}
+                          clientName = {clientName}
+                          clientLogo = {clientLogo}
+>>>>>>> footer
                           techStack = {techStacks}
                           images = {images}
                           team = {team}/>
