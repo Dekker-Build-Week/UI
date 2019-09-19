@@ -12,12 +12,16 @@ export default (props) => {
 
     const { images } = props;      
 
-    const transitions = useTransition(images[index], item => item.position, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        config: config.molasses,
-    })
+    var transitions = null;
+
+    if (images.length > 0) {
+        transitions = useTransition(images[index], item => item.position, {
+            from: { opacity: 0 },
+            enter: { opacity: 1 },
+            leave: { opacity: 0 },
+            config: config.molasses,
+        })
+    }
 
     useEffect(
         () => {
@@ -35,12 +39,15 @@ export default (props) => {
     return (
         <div className = {classes.root}>
             {
+                transitions === null ?
+                null 
+                :
                 transitions.map(({ item, props, key }) => {
                     return (
                         <animated.div
                             key={key}
                             className= {classes.scriptBox}
-                            style={{ ...props, backgroundImage: `url(${item.source})` }}
+                            style={{ ...props, backgroundImage: `url(https://${item.source})` }}
                         />
                     );
                 })

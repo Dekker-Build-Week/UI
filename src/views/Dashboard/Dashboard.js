@@ -1,19 +1,21 @@
 import React from "react";
 
+import axios from 'axios';
+
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 
-import  {
-  ProjectInformation
- } from '../../variables/projects';
+const API_URL = "https://dekker-build-api.herokuapp.com/andch_back_app/projects/";
 
 class Dashboard extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      projectTiles : []
+      projectTiles : [],
+      ProjectInformation : [],
+      Loading : true
     }
 
     this.sleep = this.sleep.bind(this);
@@ -23,10 +25,29 @@ class Dashboard extends React.Component {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
+  componentWillMount() {
+    axios.get(API_URL).then((result) => {
+      var generatedProjectTiles = result.data.projects.map((data, index) => {
+        return ({
+          projectIndex : index,
+          modalOpen : false
+        })
+      });
+
+      this.setState({
+        projectTiles : generatedProjectTiles,
+        ProjectInformation : result.data.projects,
+        Loading : false
+      })
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+
   componentDidMount() {
     var i = 0;
     setInterval(() => {
-      if (i > ProjectInformation.length - 1)
+      if (i > this.state.ProjectInformation.length - 1)
         i = 0;
       
       var newProjectTiles = this.state.projectTiles;
@@ -41,8 +62,10 @@ class Dashboard extends React.Component {
           projectTile.modalOpen = false;
       })
 
-      this.setState({projectTiles:newProjectTiles})
-      
+      this.setState({
+        projectTiles : newProjectTiles
+      })
+
       i++;
     },10000)
   }  
@@ -52,12 +75,16 @@ class Dashboard extends React.Component {
       <div>
         <GridContainer>
           {
-            ProjectInformation.map((projInfo, index) => {
+            this.state.Loading ? 
+            null 
+            :
+            this.state.ProjectInformation.map((projInfo, index) => {
               var projectTileState = {
                 projectIndex : index,
                 modalOpen : false
               }
-              if (this.state.projectTiles.length < ProjectInformation.length)
+
+              if (this.state.projectTiles.length < this.state.ProjectInformation.length)
                 this.state.projectTiles.push(projectTileState);
 
             return (
@@ -69,29 +96,13 @@ class Dashboard extends React.Component {
                 projectDescription = {projInfo.projectDescription}
                 clientName = {projInfo.clientName}
                 images = {projInfo.images}
-                techStacks = {projInfo.techStacks}
+                techStacks = {projInfo.techStack}
                 isTeam = {false} 
                 modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
             )
             })
-          }
-          {
-            ProjectInformation.map((projInfo, index) => {
-            return (
-              <ProjectTile
-                key = {index}
-                projectTitle = {projInfo.projectTitle}
-                team = {projInfo.team}
-                clientLogo = {projInfo.clientLogo}
-                clientName = {projInfo.clientName}
-                images = {projInfo.images}
-                techStacks = {projInfo.techStacks}
-                isTeam = {true} />
-            )
-            })
-          }
-  
-        </GridContainer>
+          }  
+        </GridContainer> 
       </div>
     );
   }

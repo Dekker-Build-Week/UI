@@ -41,29 +41,37 @@ class ProjectTile extends React.Component {
   render() {
     const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam, projectDescription, classes } = this.props;
 
+    let coverImage = null;
 
-    let coverImage = images.find((image) => {
-        return image.position === 0
-    });
+    if (images.length > 0) {
+      coverImage = images.find((image) => {
+          return image.position === 0
+      });
+    }
 
     return (
       <GridItem xs={12} sm={12} md={4}>
           <Card>
             <CardHeader stats icon>
-              <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
+              <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
               <p></p>
               <h3 className={classes.cardTitle}>
                 {projectTitle}
               </h3>
             </CardHeader>
             <CardBody className = {classes.cardBody}>
-              <FittedImage
-                fit="cover"
-                loader={<div>Loading</div>}
-                onLoad={(...args) => console.log(...args)}
-                onError={(...args) => console.log(...args)}
-                src={coverImage.source}
-              />
+              { 
+              coverImage === null ?
+                null 
+              :
+                <FittedImage
+                  fit="cover"
+                  loader={<div>Loading</div>}
+                  onLoad={(...args) => console.log(...args)}
+                  onError={(...args) => console.log(...args)}
+                  src={`https://${coverImage.source}`}
+                />
+              }
                   <ProjectModal 
                     modalOpen = {this.props.modalOpen}
                     handleClose = {this.handleClose}>
@@ -81,20 +89,11 @@ class ProjectTile extends React.Component {
               <div className={classes.stats}>
                 <ul className = {classes.ANDiList}>
                   {
-                    isTeam ?
-                    team.map((andi, index) => {
-                      return (
-                        <ANDiPhotoIcon
-                          key = {index}
-                          ANDiPhoto = {andi.ANDiPhoto} />
-                      )
-                    })
-                    :
                     techStacks.filter(t => t.important).map((tech, index) => {
                       return (
                         <TechStackIcon
                           key = {index}
-                          techStack = {tech.image} />
+                          techStack = {`https://${tech.image}`} />
                       )
                     })
                   }
