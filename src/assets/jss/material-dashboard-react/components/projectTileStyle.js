@@ -31,6 +31,7 @@ const projectTileStyle = {
         color: "#FF313B",
         marginTop: "0px",
         minHeight: "auto",
+        fontSize : "30px",
         fontWeight: "300",
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",

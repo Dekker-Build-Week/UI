@@ -67,7 +67,7 @@ class Dashboard extends React.Component {
       })
 
       i++;
-    },10000)
+    }, 15000)
   }  
 
   render() {
@@ -87,19 +87,19 @@ class Dashboard extends React.Component {
               if (this.state.projectTiles.length < this.state.ProjectInformation.length)
                 this.state.projectTiles.push(projectTileState);
 
-            return (
-              <ProjectTile
-                key = {index}
-                projectTitle = {projInfo.projectTitle}
-                team = {projInfo.team}
-                clientLogo = {projInfo.clientLogo}
-                projectDescription = {projInfo.projectDescription}
-                clientName = {projInfo.clientName}
-                images = {projInfo.images}
-                techStacks = {projInfo.techStack}
-                modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
-            )
-            })
+              return (
+                <ProjectTile
+                  key = {index}
+                  projectTitle = {projInfo.projectTitle}
+                  team = {projInfo.team}
+                  clientLogo = {projInfo.clientLogo}
+                  projectDescription = {projInfo.projectDescription}
+                  clientName = {projInfo.clientName}
+                  images = {projInfo.images}
+                  techStacks = {projInfo.techStack}
+                  modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
+              )
+              })
           }  
         </GridContainer> 
       </div>

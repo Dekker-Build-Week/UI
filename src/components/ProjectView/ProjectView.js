@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
@@ -9,7 +10,7 @@ import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
 import TechStackIcon from "./TechStackIcon";
 import ANDiPhotoIcon from "./ANDiPhotoIcon";
-import ImageSlider from "./ImageSlider/ImageSlider";
+import VideoPlayer from "./VideoPlayer/VideoPlayer";
 
 const useStyles = makeStyles(projectViewStyle);
 
@@ -34,7 +35,8 @@ const ProjectView = props => {
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={8}>
                         <div className = {classes.contentContainer}>
-                          <ImageSlider images = {images} />
+                          {/* <ImageSlider images = {images} /> */}
+                          <VideoPlayer />
                         </div>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
