@@ -46,7 +46,24 @@ const ProjectView = props => {
                         </div>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
-                          <p className={classes.projectDescription}>{projectDescription}</p>
+                          <GridContainer>
+                            <GridItem xs ={12} sm = {12} md = {12}>
+                              <p className={classes.projectDescription}>{projectDescription}</p>
+                            </GridItem>
+                            <GridItem xs = {12} sm = {12} md = {12}>                              
+                              <br/>
+                              <h6>Team Members</h6>
+                              <p>{team.map((andi, index) => {
+                                  return (
+                                    <ANDiPhotoIcon 
+                                  key = {index}
+                                  ANDiPhoto = {`https://${andi.ANDiPhoto}`}
+                                  ANDiName = {andi.ANDiName}/>
+                                  
+                              )
+                              })}</p>
+                            </GridItem>
+                          </GridContainer>
                       </GridItem>
                     </GridContainer>
                 </div>
@@ -55,21 +72,6 @@ const ProjectView = props => {
               <ul className = {classes.projectANDis}>
                 {
                   team
-                  ?
-                  team.map((andi, index) => {
-                    return (
-                      <ANDiPhotoIcon
-                        key = {index}
-                        ANDiPhoto = {`https://${andi.ANDiPhoto}`} />
-                    )
-                  })
-                  :
-                  null
-                }  
-                </ul>
-                <ul className = {classes.projectTechstacks}>
-                {
-                  techStack
                   ?
                   techStack.map((tech, index) => {
                     return (
@@ -80,8 +82,9 @@ const ProjectView = props => {
                   })
                   :
                   null
-                }
-              </ul>
+                }  
+                </ul>
+            
               </CardFooter>
             </Card>
         </div>

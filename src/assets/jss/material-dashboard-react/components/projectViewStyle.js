@@ -77,6 +77,12 @@ const ProjectViewStyle = {
     },
     projectTechstacks: {
         marginRight: "15px"
+    },
+
+    teamMember: {
+        paddingRight: "90px",
+        marginTop: "10px",
+        textAlign: "center"
     }
 }
 
