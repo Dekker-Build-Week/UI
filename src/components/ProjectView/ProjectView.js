@@ -22,7 +22,7 @@ const ProjectView = props => {
         <div className = {classes.projectView}>
             <Card> 
               <CardHeader stats icon className = {classes.cardHeader}>
-                <img src = {clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
+                <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
                 <p className={classes.clientName}>{clientName}</p>
                 <h3 className={classes.projectTitle}>
                   {projectTitle}
@@ -50,7 +50,7 @@ const ProjectView = props => {
                     return (
                       <ANDiPhotoIcon
                         key = {index}
-                        ANDiPhoto = {andi.ANDiPhoto} />
+                        ANDiPhoto = {`https://${andi.ANDiPhoto}`} />
                     )
                   })
                 }  
@@ -62,7 +62,7 @@ const ProjectView = props => {
                     return (
                       <TechStackIcon
                         key = {index}
-                        techStack = {tech.image} />
+                        techStack = {`https://${tech.image}`} />
                     )
                   })
                 }
