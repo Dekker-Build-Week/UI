@@ -37,9 +37,9 @@ const ProjectView = props => {
                       <GridItem xs={12} sm={12} md={8}>
                         <div className = {classes.contentContainer}>
                           {
-                            clientVideo 
+                            clientVideo
                             ?
-                            <VideoPlayer />
+                            <VideoPlayer videoSource = {clientVideo} />
                             :
                             <ImageSlider images = {images} />
                           }
