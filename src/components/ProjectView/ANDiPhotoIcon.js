@@ -9,12 +9,16 @@ const useStyles = makeStyles(andiPhotoStyles);
 const ANDiPhotoIcon = (props) => {
     const classes = useStyles();
 
-    const { ANDiPhoto } = props;
+    const { ANDiPhoto,ANDiName} = props;
 
     return (
         <li className = {classes.ANDiList}>
+        
             <img src = {ANDiPhoto} alt = "ANDi" className = {classes.ANDiPhoto} />
+            {ANDiName}
         </li>
+            
+       
     );
 }
 

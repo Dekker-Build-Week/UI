@@ -67,7 +67,7 @@ class Dashboard extends React.Component {
       })
 
       i++;
-    }, 15000)
+    }, 3000)
   }  
 
   render() {
