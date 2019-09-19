@@ -12,9 +12,11 @@ export default (props) => {
 
     const { images } = props;      
 
+    const imagesLength = images.length;
+
     var transitions = null;
 
-    if (images.length > 0) {
+    if (imagesLength > 0) {
         transitions = useTransition(images[index], item => item.position, {
             from: { opacity: 0 },
             enter: { opacity: 1 },
@@ -26,8 +28,7 @@ export default (props) => {
     useEffect(
         () => {
             const interval = setInterval(() => {
-                // eslint-disable-next-line
-                set(state => (state + 1) % (images.length));
+                set(state => (state + 1) % (imagesLength));
             }, 4000);
             
             return () => {

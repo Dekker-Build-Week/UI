@@ -14,7 +14,6 @@ import { withStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
 
 import ProjectView from "../ProjectView/ProjectView.js";
-import ANDiPhotoIcon from "./ANDiPhotoIcon";
 import TechStackIcon from "./TechStackIcon";
 
 class ProjectTile extends React.Component {
@@ -39,7 +38,7 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, isTeam, projectDescription, classes } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes } = this.props;
 
     let coverImage = null;
 
