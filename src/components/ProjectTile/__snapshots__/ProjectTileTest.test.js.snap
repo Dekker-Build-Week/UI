@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectTile test suite Renders a TechStackIcon with GridItems correctly 1`] = `
+<li
+  className="makeStyles-techList-4"
+>
+  <img
+    alt="tech"
+    className="makeStyles-techStack-3"
+    src="Stack"
+  />
+</li>
+`;
+
+exports[`ProjectTile test suite Renders the ANDiPhotoIcon correctly 1`] = `
+<li
+  className="makeStyles-ANDiList-2"
+>
+  <img
+    alt="ANDi"
+    className="makeStyles-ANDiPhoto-1"
+    src="Photo"
+  />
+</li>
+`;

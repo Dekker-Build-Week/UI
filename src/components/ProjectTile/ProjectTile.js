@@ -41,7 +41,7 @@ class ProjectTile extends React.Component {
 
     let coverImage = null;
 
-    if (images.length > 0) {
+    if (images && images.length > 0) {
       coverImage = images.find((image) => {
           return image.position === 0
       });
@@ -81,6 +81,8 @@ class ProjectTile extends React.Component {
               <div className={classes.stats}>
                 <ul className = {classes.ANDiList}>
                   {
+                    techStacks 
+                    ?
                     techStacks.filter(t => t.important).map((tech, index) => {
                       return (
                         <TechStackIcon
@@ -88,6 +90,8 @@ class ProjectTile extends React.Component {
                           techStack = {`https://${tech.image}`} />
                       )
                     })
+                    :
+                    null
                   }
                 </ul>
               </div>
