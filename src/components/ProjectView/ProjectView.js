@@ -27,6 +27,7 @@ const ProjectView = props => {
                 <h3 className={classes.projectTitle}>
                   {projectTitle}
                 </h3>
+                <div className = {classes.projectBorderTop}></div>
               </CardHeader>
               <CardBody className = {classes.projectBody}>
                   <div className={classes.projectInfo}>
