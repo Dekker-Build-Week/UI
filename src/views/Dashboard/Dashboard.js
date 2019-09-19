@@ -15,6 +15,12 @@ class Dashboard extends React.Component {
     this.state = {
       projectTiles : []
     }
+
+    this.sleep = this.sleep.bind(this);
+  }
+
+  sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
   componentDidMount() {
@@ -35,12 +41,10 @@ class Dashboard extends React.Component {
           projectTile.modalOpen = false;
       })
 
-      this.setState({
-        projectTiles : newProjectTiles
-      })
+      this.setState({projectTiles:newProjectTiles})
       
       i++;
-    },4000)
+    },10000)
   }  
 
   render() {
@@ -53,8 +57,8 @@ class Dashboard extends React.Component {
                 projectIndex : index,
                 modalOpen : false
               }
-
-              this.state.projectTiles.push(projectTileState);
+              if (this.state.projectTiles.length < ProjectInformation.length)
+                this.state.projectTiles.push(projectTileState);
 
             return (
               <ProjectTile
