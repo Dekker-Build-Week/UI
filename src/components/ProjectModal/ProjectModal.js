@@ -21,7 +21,7 @@ class ProjectModal extends React.Component {
     }
     
     render() {
-        const { classes, children } = this.props;
+        const { classes } = this.props;
 
         return (
                 <Modal
@@ -31,9 +31,8 @@ class ProjectModal extends React.Component {
                     open={this.props.modalOpen}
                     onClose={this.handleClose}
                     BackdropComponent={Backdrop}
-                >
-                  {children}
-                </Modal>
+                    children = {this.props.children}
+                />
         )
     }
 }

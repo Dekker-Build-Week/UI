@@ -1,7 +1,6 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import FittedImage from "react-fitted-image";
 import ProjectModal from "components/ProjectModal/ProjectModal.js";
 
 import GridItem from "components/Grid/GridItem.js";
@@ -9,6 +8,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CardBody from "components/Card/CardBody";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { withStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
@@ -33,7 +33,6 @@ class ProjectTile extends React.Component {
   }
 
   handleClose() {
-    console.log('Closing...')
     this.setState({ modalOpen : false })
   }
 
@@ -61,15 +60,9 @@ class ProjectTile extends React.Component {
             <CardBody className = {classes.cardBody}>
               { 
               coverImage === null ?
-                null 
+                <CircularProgress className = {classes.circularProgress} />
               :
-                <FittedImage
-                  fit="cover"
-                  loader={<div>Loading</div>}
-                  onLoad={(...args) => console.log(...args)}
-                  onError={(...args) => console.log(...args)}
-                  src={`https://${coverImage.source}`}
-                />
+                <img src={`https://${coverImage.source}`} className = {classes.coverImage} alt = "Project Cover" />
               }
                   <ProjectModal 
                     modalOpen = {this.props.modalOpen}
