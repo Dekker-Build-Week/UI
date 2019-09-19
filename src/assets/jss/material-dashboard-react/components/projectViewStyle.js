@@ -3,6 +3,7 @@ import {
     hexToRgb,
     blackColor
   } from "assets/jss/material-dashboard-react.js";
+import { isAbsolute } from "path";
 
 const ProjectViewStyle = {
     projectView : {
@@ -41,8 +42,7 @@ const ProjectViewStyle = {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
         textDecoration: "none",
-        paddingRight: "50px",
-       
+        paddingRight: "50px"
     },
     projectBody : {
         height : (window.innerHeight * 0.56)
@@ -61,6 +61,12 @@ const ProjectViewStyle = {
         paddingTop: "40px",
         paddingRight: "40px",
         marginBottom: "0"
+    },
+    projectBorderTop : {
+        borderTop: "1px solid" + grayColor[10], 
+        top: "10%",
+        bottom: "0",
+        marginLeft: "68%"
     }
 }
 
