@@ -44,6 +44,7 @@ const projectTileStyle = {
         boxShadow: "0 4px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
         borderRadius: "3px",
         marginTop: "-20px",
+        marginBottom: "5px",
         marginRight: "15px",
         float: "left"
       },

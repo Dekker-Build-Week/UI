@@ -45,7 +45,7 @@ const ProjectViewStyle = {
        
     },
     projectBody : {
-        height : (window.innerHeight * 0.50)
+        height : (window.innerHeight * 0.56)
     },
     projectInfo: {
         height: (window.innerHeight * 0.50)
@@ -54,10 +54,10 @@ const ProjectViewStyle = {
         height : (window.innerHeight * 0.50)
     },
     projectDescription: {
-        color: grayColor[0],
+        color: grayColor[8],
         margin: "0",
-        fontSize: "18px",
-        marginTop: "15px",
+        fontSize: "22px",
+        marginTop: "-30px",
         paddingTop: "40px",
         paddingRight: "40px",
         marginBottom: "0"
