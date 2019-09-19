@@ -97,6 +97,7 @@ class Dashboard extends React.Component {
                   clientName = {projInfo.clientName}
                   images = {projInfo.images}
                   techStacks = {projInfo.techStack}
+                  video = {projInfo.video}
                   modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
               )
               })
