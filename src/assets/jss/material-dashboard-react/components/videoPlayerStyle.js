@@ -5,16 +5,16 @@ import {
 
 const videoPlayerStyle = {
     videoPlayer : {
-      width : "100%",
-      height: "100px"
+      height: "100%"
     },
     videoContainer : {
       overflow: "hidden",
       position: "relative",
-      width: "100%",
+      width: "300px",
       height: "100%",
-      marginLeft: "15px",
-      marginBottom: "10px",
+      marginRight : "auto",
+      marginLeft: "auto",
+      marginBottom: "auto",
       marginTop: "10px",
       boxShadow: "0 6px 6px 0 rgba(" + hexToRgb(blackColor) + ", 0.3)"
     }

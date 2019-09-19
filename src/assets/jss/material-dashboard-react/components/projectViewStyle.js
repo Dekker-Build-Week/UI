@@ -47,10 +47,10 @@ const ProjectViewStyle = {
         height : (window.innerHeight * 0.56)
     },
     projectInfo: {
-        height: (window.innerHeight * 0.50)
+        height: (window.innerHeight * 0.55)
     },
     contentContainer : {
-        height : (window.innerHeight * 0.50)
+        height : (window.innerHeight * 0.55)
     },
     projectDescription: {
         color: grayColor[8],
