@@ -30,7 +30,7 @@ const ProjectViewStyle = {
         marginTop: "15px",
         paddingTop: "10px",
         marginBottom: "0",
-        paddingRight: "50px",
+        paddingRight: "40px",
         
     },
     projectTitle: {
@@ -42,7 +42,7 @@ const ProjectViewStyle = {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
         textDecoration: "none",
-        paddingRight: "50px"
+        paddingRight: "40px"
     },
     projectBody : {
         height : (window.innerHeight * 0.56)
@@ -67,6 +67,17 @@ const ProjectViewStyle = {
         top: "10%",
         bottom: "0",
         marginLeft: "68%"
+    },
+    projectFooter: {
+        borderTop: "1px solid" + grayColor[10],
+        marginLeft: "15px",
+        marginRight: "15px"
+    },
+    projectANDis: {
+        marginLeft: "-20px"
+    },
+    projectTechstacks: {
+        marginRight: "15px"
     }
 }
 

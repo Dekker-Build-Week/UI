@@ -5,9 +5,10 @@ import {
 
 const andiPhotoStyle = {
     ANDiPhoto : {
-        borderRadius : "60px",
-        height: "60px",
+        borderRadius : "55px",
+        height: "55px",
         boxShadow: "0px 3px 4px 0px rgba(" + hexToRgb(blackColor) + ", 0.14)",
+        marginRight: "10px"
     },
     ANDiList : {
         listStyle : "none",

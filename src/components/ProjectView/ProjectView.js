@@ -43,8 +43,8 @@ const ProjectView = props => {
                     </GridContainer>
                 </div>
               </CardBody>
-              <CardFooter stats>
-              <ul className = {classes.ANDiList}>
+              <CardFooter className = {classes.projectFooter}>
+              <ul className = {classes.projectANDis}>
                 {
                   team.map((andi, index) => {
                     return (
@@ -55,7 +55,7 @@ const ProjectView = props => {
                   })
                 }  
                 </ul>
-                <ul>
+                <ul className = {classes.projectTechstacks}>
                 {
 
                   techStack.map((tech, index) => {
