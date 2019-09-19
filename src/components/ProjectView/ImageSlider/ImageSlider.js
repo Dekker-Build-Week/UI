@@ -21,8 +21,10 @@ export default (props) => {
 
     useEffect(
         () => {
-            // eslint-disable-next-line
-            const interval = setInterval(() => set(state => (state + 1) % (images.length)), 4000);
+            const interval = setInterval(() => {
+                // eslint-disable-next-line
+                set(state => (state + 1) % (images.length));
+            }, 4000);
             
             return () => {
                 clearInterval(interval);

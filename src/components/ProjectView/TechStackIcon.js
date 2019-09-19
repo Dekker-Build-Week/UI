@@ -6,7 +6,7 @@ import techStackstyles from "assets/jss/material-dashboard-react/components/tech
 
 const useStyles = makeStyles(techStackstyles);
 
-const TechStackProjectIcon = (props) => {
+const TechStackIcon = (props) => {
     const classes = useStyles();
 
     const {techStack} = props;
@@ -18,8 +18,8 @@ const TechStackProjectIcon = (props) => {
     );
 }
 
-TechStackProjectIcon.propTypes = {
+TechStackIcon.propTypes = {
     techStack : PropTypes.string.isRequired
 }
 
-export default TechStackProjectIcon;
+export default TechStackIcon;

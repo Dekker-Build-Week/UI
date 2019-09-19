@@ -7,8 +7,8 @@ import CardBody from 'components/Card/CardBody';
 import projectViewStyle from 'assets/jss/material-dashboard-react/components/projectViewStyle.js';
 import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
-import TechStackIconProject from "./TechStackIconProject";
-import ANDiPhotoIconProject from "./ANDiPhotoIconProject";
+import TechStackIcon from "./TechStackIcon";
+import ANDiPhotoIcon from "./ANDiPhotoIcon";
 import ImageSlider from "./ImageSlider/ImageSlider";
 
 const useStyles = makeStyles(projectViewStyle);
@@ -47,7 +47,7 @@ const ProjectView = props => {
                 {
                   team.map((andi, index) => {
                     return (
-                      <ANDiPhotoIconProject
+                      <ANDiPhotoIcon
                         key = {index}
                         ANDiPhoto = {andi.ANDiPhoto} />
                     )
@@ -59,7 +59,7 @@ const ProjectView = props => {
 
                   techStack.map((tech, index) => {
                     return (
-                      <TechStackIconProject
+                      <TechStackIcon
                         key = {index}
                         techStack = {tech.image} />
                     )

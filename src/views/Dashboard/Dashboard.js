@@ -19,23 +19,28 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     var i = 0;
-    const interval = setInterval(() => {
-      if (i > 2)
+    setInterval(() => {
+      if (i > ProjectInformation.length - 1)
         i = 0;
       
       var newProjectTiles = this.state.projectTiles;
 
       newProjectTiles[i] = {
         projectIndex : i,
-        modalOpen : i % 2 === 0
+        modalOpen : true
       }
+      
+      newProjectTiles.forEach((projectTile, index) => {
+        if (index !== i) 
+          projectTile.modalOpen = false;
+      })
 
       this.setState({
         projectTiles : newProjectTiles
       })
       
       i++;
-    },2000)
+    },4000)
   }  
 
   render() {

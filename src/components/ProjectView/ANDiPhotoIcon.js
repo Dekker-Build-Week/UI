@@ -6,7 +6,7 @@ import andiPhotoStyles from "assets/jss/material-dashboard-react/components/andi
 
 const useStyles = makeStyles(andiPhotoStyles);
 
-const ANDiPhotoIconProject = (props) => {
+const ANDiPhotoIcon = (props) => {
     const classes = useStyles();
 
     const { ANDiPhoto } = props;
@@ -18,8 +18,8 @@ const ANDiPhotoIconProject = (props) => {
     );
 }
 
-ANDiPhotoIconProject.propTypes = {
+ANDiPhotoIcon.propTypes = {
     ANDiPhoto : PropTypes.string.isRequired
 }
 
-export default ANDiPhotoIconProject;
+export default ANDiPhotoIcon;
