@@ -23,21 +23,8 @@ const cardFooterStyle = {
   },
   cardFooterStats: {
     borderTop: "1px solid " + grayColor[10],
-    "& svg": {
-      position: "relative",
-      top: "4px",
-      marginRight: "3px",
-      marginLeft: "3px",
-      width: "16px",
-      height: "16px"
-    },
-    "& .fab,& .fas,& .far,& .fal,& .material-icons": {
-      fontSize: "16px",
-      position: "relative",
-      top: "4px",
-      marginRight: "3px",
-      marginLeft: "3px"
-    }
+    marginLeft: "3px",
+    marginRight: "2px"
   },
   cardFooterChart: {
     borderTop: "1px solid " + grayColor[10]

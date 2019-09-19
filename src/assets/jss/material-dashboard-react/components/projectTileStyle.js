@@ -56,7 +56,8 @@ const projectTileStyle = {
         marginRight : "3px"
       },
       ANDiList : {
-        listStyle : "none"
+        listStyle : "none",
+        marginLeft: "-30px"
       },
       modal: {
         display: 'flex',
