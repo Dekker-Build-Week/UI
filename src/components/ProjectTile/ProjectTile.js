@@ -2,7 +2,6 @@ import React from "react";
 
 import PropTypes from "prop-types";
 import ProjectModal from "components/ProjectModal/ProjectModal.js";
-import { Textfit } from 'react-textfit';
 
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";

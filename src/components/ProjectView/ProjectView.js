@@ -11,13 +11,14 @@ import GridContainer from 'components/Grid/GridContainer';
 import TechStackIcon from "./TechStackIcon";
 import ANDiPhotoIcon from "./ANDiPhotoIcon";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
+import ImageSlider from './ImageSlider/ImageSlider';
 
 const useStyles = makeStyles(projectViewStyle);
 
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack } = props;
+    const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack, clientVideo } = props;
 
     return (
         <div className = {classes.projectView}>
@@ -35,8 +36,13 @@ const ProjectView = props => {
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={8}>
                         <div className = {classes.contentContainer}>
-                          {/* <ImageSlider images = {images} /> */}
-                          <VideoPlayer />
+                          {
+                            clientVideo 
+                            ?
+                            <VideoPlayer />
+                            :
+                            <ImageSlider images = {images} />
+                          }
                         </div>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
