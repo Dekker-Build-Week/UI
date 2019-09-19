@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectView test suite Renders a TechStackIcon with GridItems correctly 1`] = `
+<li
+  className="makeStyles-techList-145"
+>
+  <img
+    alt="tech"
+    className="makeStyles-techStack-144"
+    src="Stack"
+  />
+</li>
+`;
+
+exports[`ProjectView test suite Renders the ANDiPhotoIcon correctly 1`] = `
+<li
+  className="makeStyles-ANDiList-143"
+>
+  <img
+    alt="ANDi"
+    className="makeStyles-ANDiPhoto-142"
+    src="Photo"
+  />
+</li>
+`;
+
+exports[`ProjectView test suite Renders the ImageSlider successfully 1`] = `
+<div
+  className="makeStyles-root-136"
+/>
+`;
+
+exports[`ProjectView test suite Renders the ProjectView correctly 1`] = `
+<div
+  className="makeStyles-projectView-1"
+>
+  <div
+    className="makeStyles-card-13"
+  >
+    <div
+      className="makeStyles-cardHeader-17 makeStyles-cardHeaderStats-19 makeStyles-cardHeaderIcon-20"
+    >
+      <img
+        alt="Client Logo"
+        className="makeStyles-clientLogo-2"
+        src="https://undefined"
+      />
+      <p
+        className="makeStyles-clientName-3"
+      />
+      <h3
+        className="makeStyles-projectTitle-4"
+      />
+      <div
+        className="makeStyles-projectBorderTop-9"
+      />
+    </div>
+    <div
+      className="makeStyles-cardBody-27 makeStyles-projectBody-5"
+    >
+      <div
+        className="makeStyles-projectInfo-6"
+      >
+        <div
+          className="MuiGrid-root makeStyles-grid-30 MuiGrid-container"
+        >
+          <div
+            className="MuiGrid-root makeStyles-grid-134 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-8"
+          >
+            <div
+              className="makeStyles-contentContainer-7"
+            >
+              <div
+                className="makeStyles-root-136"
+              />
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root makeStyles-grid-134 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4"
+          >
+            <p
+              className="makeStyles-projectDescription-8"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="makeStyles-cardFooter-137 makeStyles-projectFooter-10"
+    >
+      <ul
+        className="makeStyles-projectANDis-11"
+      />
+      <ul
+        className="makeStyles-projectTechstacks-12"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProjectView test suite Renders the VideoPlayer successfully 1`] = `
+<div
+  className="makeStyles-videoContainer-147"
+>
+  <div
+    className="video-react-controls-enabled video-react-paused video-react-fluid video-react-user-active video-react-workinghover video-react makeStyles-videoPlayer-146"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseMove={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="region"
+    style={
+      Object {
+        "paddingTop": "56.25%",
+      }
+    }
+    tabIndex="-1"
+  >
+    <video
+      autoPlay={true}
+      className="video-react-video"
+      muted={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+      playsInline={false}
+      preload="auto"
+      tabIndex="-1"
+    />
+    <div
+      className="video-react-loading-spinner"
+    />
+    <button
+      aria-live="polite"
+      className="video-react-big-play-button video-react-big-play-button-left big-play-button-hide"
+      onClick={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="video-react-control-text"
+      >
+        Play Video
+      </span>
+    </button>
+    <div
+      className="video-react-control-bar video-react-control-bar-auto-hide"
+    >
+      <button
+        className="video-react-play-control video-react-control video-react-button video-react-paused"
+        onClick={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="video-react-control-text"
+        >
+          Play
+        </span>
+      </button>
+      <div
+        className="video-react-volume-menu-button-horizontal video-react-vol-3 video-react-volume-menu-button video-react-menu-button-inline video-react-control video-react-button video-react-menu-button"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <div
+          className="video-react-menu"
+          onClick={[Function]}
+        >
+          <div
+            className="video-react-menu-content"
+          >
+            <div
+              aria-label="volume level"
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow="100.00"
+              aria-valuetext="100.00%"
+              className="video-react-volume-bar video-react-slider-bar video-react-slider-horizontal video-react-slider"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+              role="slider"
+              tabIndex="0"
+            >
+              <div
+                className="video-react-volume-level"
+                style={
+                  Object {
+                    "width": "100.00%",
+                  }
+                }
+              >
+                <span
+                  className="video-react-control-text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="video-react-current-time video-react-time-control video-react-control"
+      >
+        <div
+          aria-live="off"
+          className="video-react-current-time-display"
+        >
+          <span
+            className="video-react-control-text"
+          >
+            Current Time 
+          </span>
+          0:00
+        </div>
+      </div>
+      <div
+        className="video-react-time-control video-react-time-divider"
+        dir="ltr"
+      >
+        <div>
+          <span>
+            /
+          </span>
+        </div>
+      </div>
+      <div
+        className="video-react-duration video-react-time-control video-react-control"
+      >
+        <div
+          aria-live="off"
+          className="video-react-duration-display"
+        >
+          <span
+            className="video-react-control-text"
+          >
+            Duration Time 
+          </span>
+          0:00
+        </div>
+      </div>
+      <div
+        className="video-react-progress-control video-react-control"
+        onMouseMove={[Function]}
+      >
+        <div
+          aria-label="video progress bar"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow="NaN"
+          aria-valuetext="0:00"
+          className="video-react-progress-holder video-react-slider-horizontal video-react-slider"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+          role="slider"
+          tabIndex="0"
+        >
+          <div
+            className="video-react-play-progress video-react-slider-bar"
+            data-current-time="0:00"
+            style={
+              Object {
+                "width": "NaN%",
+              }
+            }
+          >
+            <span
+              className="video-react-control-text"
+            >
+              Progress: NaN%
+            </span>
+          </div>
+        </div>
+      </div>
+      <button
+        className="video-react-icon-fullscreen video-react-fullscreen-control video-react-control video-react-button video-react-icon"
+        onClick={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="video-react-control-text"
+        >
+          Non-Fullscreen
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

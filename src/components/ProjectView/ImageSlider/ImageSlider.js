@@ -12,7 +12,7 @@ export default (props) => {
 
     const { images } = props;      
 
-    const imagesLength = images.length;
+    const imagesLength = images ? images.length : -1;
 
     var transitions = null;
 

@@ -5,10 +5,10 @@ import { Player } from 'video-react';
 
 const useStyles = makeStyles(videoPlayerStyle);
 
-export default () => {
+export default (props) => {
     const classes = useStyles();
 
-    const { videoSource } = this.props;
+    const { videoSource } = props;
 
     return (
         <div className = {classes.videoContainer}>

@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types";
-// @material-ui/core components
+
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -28,7 +27,7 @@ export default function Header(props) {
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
           {/* Here we create navbar brand, based on route name */}
-          <Button color="transparent" href="#" className={classes.title}>
+          <Button color="transparent" className={classes.title}>
             <img src = {logoImage} alt = "Company Logo" className = {classes.logoImage} />
           </Button>
         </div>
@@ -36,9 +35,3 @@ export default function Header(props) {
     </AppBar>
   );
 }
-
-Header.propTypes = {
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
-  handleDrawerToggle: PropTypes.func,
-  routes: PropTypes.arrayOf(PropTypes.object)
-};

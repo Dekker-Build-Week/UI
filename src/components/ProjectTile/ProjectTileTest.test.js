@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ProjectTile from './ProjectTile';
 import ANDiPhotoIcon from './ANDiPhotoIcon';
 import TechStackIcon from './TechStackIcon';
 import renderer from 'react-test-renderer';

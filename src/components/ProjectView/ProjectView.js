@@ -54,6 +54,8 @@ const ProjectView = props => {
               <CardFooter className = {classes.projectFooter}>
               <ul className = {classes.projectANDis}>
                 {
+                  team
+                  ?
                   team.map((andi, index) => {
                     return (
                       <ANDiPhotoIcon
@@ -61,11 +63,14 @@ const ProjectView = props => {
                         ANDiPhoto = {`https://${andi.ANDiPhoto}`} />
                     )
                   })
+                  :
+                  null
                 }  
                 </ul>
                 <ul className = {classes.projectTechstacks}>
                 {
-
+                  techStack
+                  ?
                   techStack.map((tech, index) => {
                     return (
                       <TechStackIcon
@@ -73,6 +78,8 @@ const ProjectView = props => {
                         techStack = {`https://${tech.image}`} />
                     )
                   })
+                  :
+                  null
                 }
               </ul>
               </CardFooter>
