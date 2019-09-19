@@ -53,15 +53,17 @@ const ProjectView = props => {
                             <GridItem xs = {12} sm = {12} md = {12}>                              
                               <br/>
                               <h6>Team Members</h6>
-                              <p>{team.map((andi, index) => {
-                                  return (
-                                    <ANDiPhotoIcon 
-                                  key = {index}
-                                  ANDiPhoto = {`https://${andi.ANDiPhoto}`}
-                                  ANDiName = {andi.ANDiName}/>
-                                  
-                              )
-                              })}</p>
+                              <GridContainer>
+                                {team.map((andi, index) => {
+                                    return (
+                                      <ANDiPhotoIcon 
+                                        key = {index}
+                                        ANDiPhoto = {`https://${andi.ANDiPhoto}`}
+                                        ANDiName = {andi.ANDiName}/>
+                                    
+                                )
+                                })}
+                              </GridContainer>
                             </GridItem>
                           </GridContainer>
                       </GridItem>

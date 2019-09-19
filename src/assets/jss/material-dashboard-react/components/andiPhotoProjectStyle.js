@@ -9,12 +9,12 @@ const andiPhotoStyle = {
         borderRadius : "55px",
         height: "55px",
         boxShadow: "0px 3px 4px 0px rgba(" + hexToRgb(blackColor) + ", 0.14)",
-        marginRight: "10px",
-        textAlign: "center"
+        marginBottom : "-13px"
     },
-    ANDiList : {
-        listStyle : "none",
-        display: "inline",
+    ANDiContainer : {
+        width: "100%",
+        lineHeight : "93%",
+        textAlign: "center"
     }
 };
 
