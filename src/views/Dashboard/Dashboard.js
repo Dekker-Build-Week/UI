@@ -5,8 +5,7 @@ import axios from 'axios';
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
-
-const API_URL = "https://dekker-build-api.herokuapp.com/andch_back_app/projects/";
+import * as CONFIG from "../../config.json";
 
 class Dashboard extends React.Component {
   constructor() {
@@ -26,7 +25,7 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount() {
-    axios.get(API_URL).then((result) => {
+    axios.get(CONFIG.default.API_URL).then((result) => {
       var generatedProjectTiles = result.data.projects.map((data, index) => {
         return ({
           projectIndex : index,
