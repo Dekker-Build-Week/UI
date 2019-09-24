@@ -53,7 +53,6 @@ class ProjectTile extends React.Component {
     return (
       <div className = {classes.projectTile}>
           <Card>
-            <CardActionArea onClick={event => { console.log("here")}}>
             <CardHeader stats icon>
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
               <p></p>
@@ -61,6 +60,7 @@ class ProjectTile extends React.Component {
                 {projectTitle}
               </h3>
             </CardHeader>
+            <CardActionArea>
             <CardBody className = {classes.cardBody}>
               { 
               coverImage === null ?
@@ -82,6 +82,7 @@ class ProjectTile extends React.Component {
                         team = {team}/>
                   </ProjectModal> 
             </CardBody>
+            </CardActionArea>
             <CardFooter stats>              
                 {
                   techStacks 
@@ -103,7 +104,6 @@ class ProjectTile extends React.Component {
                   null
                 }
             </CardFooter>
-            </CardActionArea>
           </Card>
       </div>
     )
