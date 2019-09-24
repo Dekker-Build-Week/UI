@@ -101,7 +101,7 @@ class Dashboard extends React.Component {
         i++;
       } else {
         console.log(i);
-        if (i === 1 /*this.state.ProjectInformation.length - 1*/) {
+        if (i === this.state.ProjectInformation.length - 1) {
           setTimeout(() => this.slider.slickNext(), 2000);
           console.log('Should slide')
         }
