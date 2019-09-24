@@ -6,7 +6,7 @@ import axios from 'axios';
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 import * as CONFIG from "../../config.json";
 
-const delayTime = 15000;
+const delayTime = 3000;
 const numSlides = 6;
 
 var autoScrollSpeed = ((numSlides) * delayTime);
@@ -100,8 +100,11 @@ class Dashboard extends React.Component {
 
         i++;
       } else {
-        if (i === 1 /*this.state.ProjectInformation.length - 1*/)
-          this.slider.slickNext();   
+        console.log(i);
+        if (i === 1 /*this.state.ProjectInformation.length - 1*/) {
+          setTimeout(() => this.slider.slickNext(), 2000);
+          console.log('Should slide')
+        }
 
         newProjectTiles.forEach((projectTile, index) => {
             projectTile.modalOpen = false;
