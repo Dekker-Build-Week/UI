@@ -8,6 +8,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CardBody from "components/Card/CardBody";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CardActionArea from '@material-ui/core/CardActionArea';
+
 
 import { withStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
@@ -51,6 +53,7 @@ class ProjectTile extends React.Component {
     return (
       <div className = {classes.projectTile}>
           <Card>
+            <CardActionArea onClick={event => { console.log("here")}}>
             <CardHeader stats icon>
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
               <p></p>
@@ -100,6 +103,7 @@ class ProjectTile extends React.Component {
                   null
                 }
             </CardFooter>
+            </CardActionArea>
           </Card>
       </div>
     )

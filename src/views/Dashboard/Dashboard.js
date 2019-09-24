@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import axios from 'axios';
 
+
 // core components
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 import * as CONFIG from "../../config.json";
