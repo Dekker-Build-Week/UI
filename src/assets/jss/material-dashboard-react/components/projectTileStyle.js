@@ -5,28 +5,6 @@ import {
   } from "assets/jss/material-dashboard-react.js";
 
 const projectTileStyle = {
-    stats: {
-        color: grayColor[0],
-        display: "inline-flex",
-        fontSize: "12px",
-        lineHeight: "22px",
-        overflow: "hidden",
-        "& svg": {
-          top: "4px",
-          width: "16px",
-          height: "16px",
-          position: "relative",
-          marginRight: "3px",
-          marginLeft: "3px"
-        },
-        "& .fab,& .fas,& .far,& .fal,& .material-icons": {
-          top: "4px",
-          fontSize: "16px",
-          position: "relative",
-          marginRight: "3px",
-          marginLeft: "3px"
-        }
-      },
       cardTitle: {
         color: "#FF313B",
         marginTop: "0px",
@@ -60,10 +38,6 @@ const projectTileStyle = {
         textAlign: "center",
         marginRight : "3px"
       },
-      ANDiList : {
-        listStyle : "none",
-        marginLeft: "-30px"
-      },
       modal: {
         display: 'flex',
         alignItems: 'center',
@@ -75,6 +49,9 @@ const projectTileStyle = {
       coverImage : {
         width: "100%",
         objectFit: "contain"
+      },
+      projectTile : {
+        margin : "8px"
       }
 };
 
