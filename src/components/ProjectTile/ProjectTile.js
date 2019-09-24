@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import ProjectModal from "components/ProjectModal/ProjectModal.js";
 
-import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
@@ -15,6 +14,8 @@ import projectTileStyle from "assets/jss/material-dashboard-react/components/pro
 
 import ProjectView from "../ProjectView/ProjectView.js";
 import TechStackIcon from "./TechStackIcon";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
 
 class ProjectTile extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class ProjectTile extends React.Component {
     }
 
     return (
-      <GridItem xs={12} sm={12} md={4}>
+      <div className = {classes.projectTile}>
           <Card>
             <CardHeader stats icon>
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
@@ -78,27 +79,29 @@ class ProjectTile extends React.Component {
                         team = {team}/>
                   </ProjectModal> 
             </CardBody>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <ul className = {classes.ANDiList}>
-                  {
-                    techStacks 
-                    ?
-                    techStacks.filter(t => t.important).map((tech, index) => {
-                      return (
-                        <TechStackIcon
-                          key = {index}
-                          techStack = {`https://${tech.image}`} />
-                      )
-                    })
-                    :
-                    null
-                  }
-                </ul>
-              </div>
+            <CardFooter stats>              
+                {
+                  techStacks 
+                  ?
+                  <GridContainer>
+                    <GridItem xs = {12} sm = {12} md = {12}>
+                    {
+                      techStacks.filter(t => t.important).map((tech, index) => {
+                        return (
+                          <TechStackIcon
+                            key = {index}
+                            techStack = {`https://${tech.image}`} />
+                        )
+                      })
+                    }
+                    </GridItem>
+                  </GridContainer>
+                  :
+                  null
+                }
             </CardFooter>
           </Card>
-      </GridItem>
+      </div>
     )
   }
 }
