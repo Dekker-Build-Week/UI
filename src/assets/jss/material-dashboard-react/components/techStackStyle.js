@@ -1,11 +1,12 @@
 const techStackStyle = {
     techStack : {
-        height: "30px",
+        height: "30px"
     },
     techList : {
         listStyle : "none",
-        display: "inline",
-        marginRight: "5px"
+        display: "inline-block",
+        marginRight: "2px",
+        marginLeft: "3px"
     }
 };
 

@@ -13,9 +13,9 @@ const TechStackIcon = (props) => {
     const {techStack} = props;
 
     return (
-       <GridItem xs = {1} sm = {1} md = {1}>
+        <div className = {classes.techList}>
             <img src = {techStack} alt = "tech" className = {classes.techStack} />
-        </GridItem>
+        </div>
     );
 }
 

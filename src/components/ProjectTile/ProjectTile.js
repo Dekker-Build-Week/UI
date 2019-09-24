@@ -15,6 +15,7 @@ import projectTileStyle from "assets/jss/material-dashboard-react/components/pro
 import ProjectView from "../ProjectView/ProjectView.js";
 import TechStackIcon from "./TechStackIcon";
 import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
 
 class ProjectTile extends React.Component {
   constructor(props) {
@@ -83,6 +84,7 @@ class ProjectTile extends React.Component {
                   techStacks 
                   ?
                   <GridContainer>
+                    <GridItem xs = {12} sm = {12} md = {12}>
                     {
                       techStacks.filter(t => t.important).map((tech, index) => {
                         return (
@@ -92,6 +94,7 @@ class ProjectTile extends React.Component {
                         )
                       })
                     }
+                    </GridItem>
                   </GridContainer>
                   :
                   null
