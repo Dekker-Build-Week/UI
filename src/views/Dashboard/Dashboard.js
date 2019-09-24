@@ -87,7 +87,7 @@ class Dashboard extends React.Component {
     let timeout;
     (() => {
       clearTimeout(timeout);
-      timeout = setTimeout(() => this.setState({mouseMoving:false}), 50);
+      timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
     })();
   }
 
