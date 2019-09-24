@@ -52,6 +52,10 @@ const ProjectViewStyle = {
     contentContainer : {
         height : (window.innerHeight * 0.55)
     },
+    projectDescriptionContainer : {
+        height : "100%",
+        overflow: "hidden"
+    },
     projectDescription: {
         color: grayColor[8],
         margin: "0",
@@ -78,7 +82,6 @@ const ProjectViewStyle = {
     projectTechstacks: {
         marginRight: "15px"
     },
-
     teamMember: {
         paddingRight: "90px",
         marginTop: "10px",

@@ -48,22 +48,26 @@ const ProjectView = props => {
                       <GridItem xs={12} sm={12} md={4}>
                           <GridContainer>
                             <GridItem xs ={12} sm = {12} md = {12}>
-                              <p className={classes.projectDescription}>{projectDescription}</p>
+                              <div className = {classes.projectDescriptionContainer}>
+                                <p className={classes.projectDescription}>{projectDescription}</p>
+                              </div>
                             </GridItem>
-                            <GridItem xs = {12} sm = {12} md = {12}>                              
-                              <br/>
-                              <h6>Team Members</h6>
-                              <GridContainer>
-                                {team.map((andi, index) => {
-                                    return (
-                                      <ANDiPhotoIcon 
-                                        key = {index}
-                                        ANDiPhoto = {`https://${andi.ANDiPhoto}`}
-                                        ANDiName = {andi.ANDiName}/>
-                                    
-                                )
-                                })}
-                              </GridContainer>
+                            <GridItem xs = {12} sm = {12} md = {12}> 
+                              <div className = {classes.teamIcons}>                           
+                                <br/>
+                                <h6>Team Members</h6>
+                                <GridContainer>
+                                  {team.map((andi, index) => {
+                                      return (
+                                        <ANDiPhotoIcon 
+                                          key = {index}
+                                          ANDiPhoto = {`https://${andi.ANDiPhoto}`}
+                                          ANDiName = {andi.ANDiName}/>
+                                      
+                                  )
+                                  })}    
+                                </GridContainer>
+                              </div> 
                             </GridItem>
                           </GridContainer>
                       </GridItem>
