@@ -52,6 +52,9 @@ const projectTileStyle = {
       },
       projectTile : {
         margin : "8px"
+      },
+      openingTile : {
+        opacity : "0.5",
       }
 };
 
