@@ -32,6 +32,7 @@ class ProjectTile extends React.Component {
   }
 
   handleOpen() {
+    console.log("everytime?")
     this.setState({ modalOpen : true })
   }
 
@@ -40,7 +41,7 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
 
     let coverImage = null;
 
@@ -51,7 +52,7 @@ class ProjectTile extends React.Component {
     }
 
     return (
-      <div className = {classes.projectTile}>
+      <div className = { nextToOpen ? classes.openingTile : classes.projectTile}>
           <Card>
             <CardHeader stats icon>
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
@@ -83,7 +84,7 @@ class ProjectTile extends React.Component {
                   </ProjectModal> 
             </CardBody>
             </CardActionArea>
-            <CardFooter stats>              
+            <CardFooter stats>
                 {
                   techStacks 
                   ?
