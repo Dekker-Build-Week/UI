@@ -36,13 +36,16 @@ class Dashboard extends React.Component {
       projectTiles : [],
       ProjectInformation : [],
       Loading : true,
-      mouseMoving : false
+      mouseMoving : false,
+      clicked: false,
     }
 
     this.sleep = this.sleep.bind(this);
     this.setMouseMove = this.setMouseMove.bind(this);
     this.closeAllModals = this.closeAllModals.bind(this);
     this.performModalSequencing = this.performModalSequencing.bind(this);
+    this.clickAble = this.clickAble.bind(this);
+    this.clickedSequence = this.clickedSequence.bind(this);
   }
 
   sleep(milliseconds) {
@@ -60,6 +63,7 @@ class Dashboard extends React.Component {
       projectTiles : newProjectTiles
     })    
   }
+
 
   performModalSequencing(i, shouldBeOpen) {
     var newProjectTiles = this.state.projectTiles;
@@ -79,19 +83,43 @@ class Dashboard extends React.Component {
     })
   }
 
+  clickedSequence(i,opened){
+      var newProjectTiles = this.state.projectTiles;
+      
+      newProjectTiles.forEach((projectTile, index) => {
+        if (index == i) 
+          projectTile.modalOpen = true;
+          this.setState({mouseMoving: false})
+          
+      })
+
+    
+  
+    }
+  
+
+
   setMouseMove(e) {
     e.preventDefault();
     this.setState({mouseMoving: true});
     
     this.closeAllModals();    
 
-    let timeout;
+    let timeout
     (() => {
       clearTimeout(timeout);
       timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
     })();
   }
 
+  clickAble(e,i) {
+    e.preventDefault();
+    this.setState({clicked: true});
+    
+    this.clickedSequence(i,true);    
+
+   
+  }
   componentWillMount() {
     axios.get(CONFIG.default.API_URL).then((result) => {
       var requestData = result.data.projects;
@@ -171,6 +199,7 @@ class Dashboard extends React.Component {
                     this.state.projectTiles.push(projectTileState);
 
                   return (
+                    <div onClick = {(e) => this.clickAble(e,index)}>
                     <ProjectTile
                       key = {index}
                       projectTitle = {projInfo.projectTitle}
@@ -182,6 +211,7 @@ class Dashboard extends React.Component {
                       techStacks = {projInfo.techStack}
                       video = {projInfo.video}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
+                      </div>
                   )
                   })
               }  
