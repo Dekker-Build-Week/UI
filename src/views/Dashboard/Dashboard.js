@@ -70,13 +70,25 @@ class Dashboard extends React.Component {
     
     newProjectTiles[i] = {
       projectIndex : i,
-      modalOpen : shouldBeOpen
+      modalOpen : shouldBeOpen,
+      nextToOpen : false
     }
 
     newProjectTiles.forEach((projectTile, index) => {
       if (index !== i) 
         projectTile.modalOpen = false;
+
+      if (index === (i + 1) && index < newProjectTiles.length)
+        projectTile.nextToOpen = true;
+
+      if (index === newProjectTiles.length)
+        newProjectTiles.forEach((tile) => {
+          if (tile.projectIndex === 0)
+            tile.nextToOpen = true;
+        })
     })
+
+    console.log(this.state);
 
     this.setState({
       projectTiles : newProjectTiles
@@ -129,7 +141,8 @@ class Dashboard extends React.Component {
       var generatedProjectTiles = requestData.map((data, index) => {
         return ({
           projectIndex : index,
-          modalOpen : false
+          modalOpen : false,
+          nextToOpen : index === 0
         })
       });
 
@@ -154,7 +167,6 @@ class Dashboard extends React.Component {
   componentDidMount() {
     var i = 0;
     var shouldBeOpen = true;
-
     setInterval(() => {
       if (!this.state.mouseMoving) {
         if (shouldBeOpen) {
@@ -178,6 +190,7 @@ class Dashboard extends React.Component {
         shouldBeOpen = !shouldBeOpen;
       }
     }, delayTime) 
+
       
   } 
 
@@ -192,7 +205,8 @@ class Dashboard extends React.Component {
                 this.state.ProjectInformation.map((projInfo, index) => {
                   var projectTileState = {
                     projectIndex : index,
-                    modalOpen : false
+                    modalOpen : false,
+                    fade : false,
                   }
 
                   if (this.state.projectTiles.length < this.state.ProjectInformation.length)
@@ -210,10 +224,13 @@ class Dashboard extends React.Component {
                       images = {projInfo.images}
                       techStacks = {projInfo.techStack}
                       video = {projInfo.video}
-                      modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
+                      nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
+                      modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}
+                      />
                       </div>
                   )
                   })
+              }
               }  
         </Slider>
       </div>
