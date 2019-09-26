@@ -179,7 +179,7 @@ class Dashboard extends React.Component {
               i = 0;
             }
 
-            this.performModalSequencing(i, shouldBeOpen);
+            // this.performModalSequencing(i, shouldBeOpen);
 
             i++;
           } else {
@@ -201,7 +201,7 @@ class Dashboard extends React.Component {
     return (
       <div
         onMouseMove={e => this.setMouseMove(e)}
-        onClick={e => this.clickAble(e, null)}
+        // onClick={e => this.clickAble(e, null)}
       >
         <Slider
           {...settings}
@@ -250,7 +250,7 @@ class Dashboard extends React.Component {
               })}
         </Slider>
         <ProjectModal modalOpen={this.state.showModal}>
-          <ProjectEntry selectedFile UploadedClientLogo hideElement />
+          <ProjectEntry />
         </ProjectModal>
         <Button onClick={() => this.setState({ showModal: true })}>
           Add Project
