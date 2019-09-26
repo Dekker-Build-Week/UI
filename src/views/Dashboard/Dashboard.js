@@ -7,7 +7,7 @@ import axios from 'axios';
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 import * as CONFIG from "../../config.json";
 
-const delayTime = 3000;
+const delayTime = 7000;
 const slideDelayTime = 1000;
 const numSlides = 6;
 
@@ -16,7 +16,6 @@ var isAtBeginning = true;
 var autoScrollSpeed = ((numSlides) * delayTime);
     
 const settings = {
-  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
@@ -99,17 +98,15 @@ class Dashboard extends React.Component {
       newProjectTiles.forEach((projectTile, index) => {
         if (index == i) 
           projectTile.modalOpen = true;
-          this.setState({mouseMoving: false})
-          
       })
 
-    
+      
   
     }
   
 
-
   setMouseMove(e) {
+    if(!this.state.clicked){
     e.preventDefault();
     this.setState({mouseMoving: true});
     
@@ -121,14 +118,24 @@ class Dashboard extends React.Component {
       timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
     })();
   }
+}
 
   clickAble(e,i) {
+    if(!this.state.clicked){
     e.preventDefault();
     this.setState({clicked: true});
     
     this.clickedSequence(i,true);    
-
-   
+    }
+    else{
+      this.setState({clicked: false});
+      this.closeAllModals();
+    }
+    let timeout
+    (() => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
+    })();
   }
   componentWillMount() {
     axios.get(CONFIG.default.API_URL).then((result) => {
@@ -167,6 +174,7 @@ class Dashboard extends React.Component {
     var shouldBeOpen = true;
 
     setInterval(() => {
+    if(!this.state.clicked){
       if (!this.state.mouseMoving) {
         if (shouldBeOpen) {
           if (i > this.state.ProjectInformation.length - 1) {      
@@ -188,13 +196,15 @@ class Dashboard extends React.Component {
         }
         shouldBeOpen = !shouldBeOpen;
       }
-    }, delayTime) 
+    
+    }}, delayTime) 
       
   } 
 
   render() {
     return (
-      <div onMouseMove = {(e) => this.setMouseMove(e)}>
+      <div onMouseMove = {(e) => this.setMouseMove(e)}
+        onClick = {(e) => this.clickAble(e,null)}>
         <Slider {...settings} ref={slider => this.slider =  slider && slider['innerSlider']}>
             {
                 this.state.Loading ? 
