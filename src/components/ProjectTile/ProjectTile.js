@@ -51,10 +51,9 @@ class ProjectTile extends React.Component {
     }
 
     return (
-      <div className = { nextToOpen ? classes.openingTile : classes.projectTile}>
-        <CardActionArea></CardActionArea>
-          <Card>
-            <CardHeader stats icon>
+      <div className = {classes.projectTile}>
+          <Card className = { nextToOpen ? classes.openingTile : null}>
+            <CardHeader stats icon >
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
               <p></p>
               <h3 className={classes.cardTitle}>

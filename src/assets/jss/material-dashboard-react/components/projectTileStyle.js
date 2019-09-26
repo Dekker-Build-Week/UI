@@ -54,7 +54,7 @@ const projectTileStyle = {
         margin : "8px"
       },
       openingTile : {
-        opacity : "0.5",
+        boxShadow: "0 0 2px 2px rgb(255, 50, 59)",
       }
 };
 

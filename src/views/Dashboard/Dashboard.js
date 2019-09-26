@@ -96,7 +96,7 @@ class Dashboard extends React.Component {
       var newProjectTiles = this.state.projectTiles;
       
       newProjectTiles.forEach((projectTile, index) => {
-        if (index == i) 
+        if (index === i) 
           projectTile.modalOpen = true;
       })
 
