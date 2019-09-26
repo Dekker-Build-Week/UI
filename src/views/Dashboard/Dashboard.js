@@ -2,11 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import axios from 'axios';
 
+
 // core components
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 import * as CONFIG from "../../config.json";
 
-const delayTime = 3000;
+const delayTime = 7000;
 const slideDelayTime = 1000;
 const numSlides = 6;
 
@@ -15,7 +16,6 @@ var isAtBeginning = true;
 var autoScrollSpeed = ((numSlides) * delayTime);
     
 const settings = {
-  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
@@ -35,13 +35,16 @@ class Dashboard extends React.Component {
       projectTiles : [],
       ProjectInformation : [],
       Loading : true,
-      mouseMoving : false
+      mouseMoving : false,
+      clicked: false,
     }
 
     this.sleep = this.sleep.bind(this);
     this.setMouseMove = this.setMouseMove.bind(this);
     this.closeAllModals = this.closeAllModals.bind(this);
     this.performModalSequencing = this.performModalSequencing.bind(this);
+    this.clickAble = this.clickAble.bind(this);
+    this.clickedSequence = this.clickedSequence.bind(this);
   }
 
   sleep(milliseconds) {
@@ -60,17 +63,28 @@ class Dashboard extends React.Component {
     })    
   }
 
+
   performModalSequencing(i, shouldBeOpen) {
     var newProjectTiles = this.state.projectTiles;
     
     newProjectTiles[i] = {
       projectIndex : i,
-      modalOpen : shouldBeOpen
+      modalOpen : shouldBeOpen,
+      nextToOpen : false
     }
 
     newProjectTiles.forEach((projectTile, index) => {
       if (index !== i) 
         projectTile.modalOpen = false;
+        
+        if (index === (i + 1) && index < newProjectTiles.length)
+        projectTile.nextToOpen = true;
+
+      if (index === newProjectTiles.length)
+        newProjectTiles.forEach((tile) => {
+          if (tile.projectIndex === 0)
+            tile.nextToOpen = true;
+        })
     })
 
     this.setState({
@@ -78,19 +92,51 @@ class Dashboard extends React.Component {
     })
   }
 
+  clickedSequence(i,opened){
+      var newProjectTiles = this.state.projectTiles;
+      
+      newProjectTiles.forEach((projectTile, index) => {
+        if (index == i) 
+          projectTile.modalOpen = true;
+      })
+
+      
+  
+    }
+  
+
   setMouseMove(e) {
+    if(!this.state.clicked){
     e.preventDefault();
     this.setState({mouseMoving: true});
     
     this.closeAllModals();    
 
-    let timeout;
+    let timeout
     (() => {
       clearTimeout(timeout);
       timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
     })();
   }
+}
 
+  clickAble(e,i) {
+    if(!this.state.clicked){
+    e.preventDefault();
+    this.setState({clicked: true});
+    
+    this.clickedSequence(i,true);    
+    }
+    else{
+      this.setState({clicked: false});
+      this.closeAllModals();
+    }
+    let timeout
+    (() => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
+    })();
+  }
   componentWillMount() {
     axios.get(CONFIG.default.API_URL).then((result) => {
       var requestData = result.data.projects;
@@ -100,7 +146,8 @@ class Dashboard extends React.Component {
       var generatedProjectTiles = requestData.map((data, index) => {
         return ({
           projectIndex : index,
-          modalOpen : false
+          modalOpen : false,
+          nextToOpen : index === 0
         })
       });
 
@@ -127,6 +174,7 @@ class Dashboard extends React.Component {
     var shouldBeOpen = true;
 
     setInterval(() => {
+    if(!this.state.clicked){
       if (!this.state.mouseMoving) {
         if (shouldBeOpen) {
           if (i > this.state.ProjectInformation.length - 1) {      
@@ -148,13 +196,15 @@ class Dashboard extends React.Component {
         }
         shouldBeOpen = !shouldBeOpen;
       }
-    }, delayTime) 
+    
+    }}, delayTime) 
       
   } 
 
   render() {
     return (
-      <div onMouseMove = {(e) => this.setMouseMove(e)}>
+      <div onMouseMove = {(e) => this.setMouseMove(e)}
+        onClick = {(e) => this.clickAble(e,null)}>
         <Slider {...settings} ref={slider => this.slider =  slider && slider['innerSlider']}>
             {
                 this.state.Loading ? 
@@ -163,13 +213,15 @@ class Dashboard extends React.Component {
                 this.state.ProjectInformation.map((projInfo, index) => {
                   var projectTileState = {
                     projectIndex : index,
-                    modalOpen : false
+                    modalOpen : false,
+                    fade : false,
                   }
 
                   if (this.state.projectTiles.length < this.state.ProjectInformation.length)
                     this.state.projectTiles.push(projectTileState);
 
                   return (
+                    <div onClick = {(e) => this.clickAble(e,index)}>
                     <ProjectTile
                       key = {index}
                       projectTitle = {projInfo.projectTitle}
@@ -180,7 +232,9 @@ class Dashboard extends React.Component {
                       images = {projInfo.images}
                       techStacks = {projInfo.techStack}
                       video = {projInfo.video}
+                      nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
+                      </div>
                   )
                   })
               }  

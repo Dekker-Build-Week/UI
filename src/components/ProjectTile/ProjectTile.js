@@ -8,6 +8,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CardBody from "components/Card/CardBody";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CardActionArea from '@material-ui/core/CardActionArea';
+
 
 import { withStyles } from "@material-ui/core/styles";
 import projectTileStyle from "assets/jss/material-dashboard-react/components/projectTileStyle.js";
@@ -38,7 +40,7 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
 
     let coverImage = null;
 
@@ -49,7 +51,8 @@ class ProjectTile extends React.Component {
     }
 
     return (
-      <div className = {classes.projectTile}>
+      <div className = { nextToOpen ? classes.openingTile : classes.projectTile}>
+        <CardActionArea></CardActionArea>
           <Card>
             <CardHeader stats icon>
               <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
@@ -58,6 +61,7 @@ class ProjectTile extends React.Component {
                 {projectTitle}
               </h3>
             </CardHeader>
+            <CardActionArea>
             <CardBody className = {classes.cardBody}>
               { 
               coverImage === null ?
@@ -79,6 +83,7 @@ class ProjectTile extends React.Component {
                         team = {team}/>
                   </ProjectModal> 
             </CardBody>
+            </CardActionArea>
             <CardFooter stats>              
                 {
                   techStacks 
