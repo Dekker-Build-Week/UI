@@ -61,8 +61,8 @@ const ProjectView = props => {
                                       return (
                                         <ANDiPhotoIcon 
                                           key = {index}
-                                          ANDiPhoto = {`https://${andi.ANDiPhoto}`}
-                                          ANDiName = {andi.ANDiName}/>
+                                          ANDiPhoto = {`https://${andi.photoPath}`}
+                                          ANDiName = {andi.name}/>
                                       
                                   )
                                   })}    
@@ -83,7 +83,7 @@ const ProjectView = props => {
                     return (
                       <TechStackIcon
                         key = {index}
-                        techStack = {`https://${tech.image}`} />
+                        techStack = {`https://${tech.imagePath}`} />
                     )
                   })
                   :

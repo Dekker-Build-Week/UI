@@ -42,13 +42,9 @@ class ProjectTile extends React.Component {
   render() {
     const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
 
-    let coverImage = null;
+    let coverImage = images;
 
-    if (images && images.length > 0) {
-      coverImage = images.find((image) => {
-          return image.position === 0
-      });
-    }
+   
 
     return (
       <div className = {classes.projectTile}>
@@ -90,11 +86,11 @@ class ProjectTile extends React.Component {
                   <GridContainer>
                     <GridItem xs = {12} sm = {12} md = {12}>
                     {
-                      techStacks.filter(t => t.important).map((tech, index) => {
+                      techStacks.map((tech, index) => {
                         return (
                           <TechStackIcon
                             key = {index}
-                            techStack = {`https://${tech.image}`} />
+                            techStack = {`https://${tech.imagePath}`} />
                         )
                       })
                     }

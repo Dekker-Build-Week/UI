@@ -139,7 +139,7 @@ class Dashboard extends React.Component {
   }
   componentWillMount() {
     axios.get(CONFIG.default.API_URL).then((result) => {
-      var requestData = result.data.projects;
+      var requestData = result.data;
 
       requestData = requestData.concat(requestData);
 
@@ -224,14 +224,14 @@ class Dashboard extends React.Component {
                     <div onClick = {(e) => this.clickAble(e,index)}>
                     <ProjectTile
                       key = {index}
-                      projectTitle = {projInfo.projectTitle}
+                      projectTitle = {projInfo.title}
                       team = {projInfo.team}
-                      clientLogo = {projInfo.clientLogo}
-                      projectDescription = {projInfo.projectDescription}
-                      clientName = {projInfo.clientName}
-                      images = {projInfo.images}
-                      techStacks = {projInfo.techStack}
-                      video = {projInfo.video}
+                      clientLogo = {projInfo.client.imagePath}
+                      projectDescription = {projInfo.description}
+                      clientName = {projInfo.client.name}
+                      images = {projInfo.coverImagePath}
+                      techStacks = {projInfo.techStacks}
+                      video = {projInfo.videoPath}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
                       </div>
