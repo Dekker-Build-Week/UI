@@ -37,6 +37,8 @@ class Dashboard extends React.Component {
       Loading : true,
       mouseMoving : false,
       clicked: false,
+      imagePath :CONFIG.default.PIC_URL,
+
     }
 
     this.sleep = this.sleep.bind(this);
@@ -160,6 +162,10 @@ class Dashboard extends React.Component {
       console.error(error);
     });
 
+    
+
+
+
     window.addEventListener('wheel', (e) => {
       try {
         this.slide(e.wheelDelta);
@@ -230,6 +236,7 @@ class Dashboard extends React.Component {
                       projectDescription = {projInfo.description}
                       clientName = {projInfo.client.name}
                       images = {projInfo.coverImagePath}
+                      imagePaths = {this.state.imagePath}
                       techStacks = {projInfo.techStacks}
                       video = {projInfo.videoPath}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
