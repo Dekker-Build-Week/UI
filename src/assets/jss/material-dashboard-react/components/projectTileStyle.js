@@ -9,7 +9,7 @@ const projectTileStyle = {
         color: "#FF313B",
         marginTop: "0px",
         minHeight: "auto",
-        fontSize : "30px",
+        fontSize : "25px",
         fontWeight: "300",
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
@@ -19,12 +19,12 @@ const projectTileStyle = {
         border: "1px solid black"
       },
       clientLogo: {
-        height: "80px",
+        maxHeight: "80px",
         boxShadow: "0 4px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
         borderRadius: "3px",
         marginTop: "-20px",
         marginBottom: "5px",
-        maxWidth: "50%",
+        maxWidth: "40%",
         objectFit : "stretch",
         marginRight: "15px",
         float: "left"

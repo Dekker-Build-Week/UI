@@ -75,7 +75,8 @@ class ProjectTile extends React.Component {
                         techStack = {techStacks}
                         images = {images}
                         clientVideo = {video}
-                        team = {team}/>
+                        team = {team}
+                        imagePaths = {imagePaths}/>
                   </ProjectModal> 
             </CardBody>
             </CardActionArea>

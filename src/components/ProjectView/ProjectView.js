@@ -18,8 +18,7 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack, clientVideo } = props;
-
+    const { projectTitle, clientName, projectDescription, clientLogo, images, imagePaths, team, techStack, clientVideo } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 
@@ -39,7 +38,7 @@ const ProjectView = props => {
                           {
                             clientVideo
                             ?
-                            <VideoPlayer videoSource = {clientVideo} />
+                            <VideoPlayer videoSource = {"secret-sands-59734.herokuapp.com/"+clientVideo} />
                             :
                             <ImageSlider images = {images} />
                           }

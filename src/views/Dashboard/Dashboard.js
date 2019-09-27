@@ -17,6 +17,7 @@ var autoScrollSpeed = ((numSlides) * delayTime);
     
 const settings = {
   infinite: true,
+  dots: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -143,8 +144,6 @@ class Dashboard extends React.Component {
     axios.get(CONFIG.default.API_URL).then((result) => {
       var requestData = result.data;
 
-      requestData = requestData.concat(requestData);
-
       var generatedProjectTiles = requestData.map((data, index) => {
         return ({
           projectIndex : index,
@@ -222,7 +221,6 @@ class Dashboard extends React.Component {
                     modalOpen : false,
                     fade : false,
                   }
-
                   if (this.state.projectTiles.length < this.state.ProjectInformation.length)
                     this.state.projectTiles.push(projectTileState);
 
