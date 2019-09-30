@@ -59,11 +59,13 @@ const ProjectViewStyle = {
     projectDescription: {
         color: grayColor[8],
         margin: "0",
-        fontSize: "22px",
+        fontSize: "18px",
         marginTop: "-30px",
         paddingTop: "40px",
         paddingRight: "40px",
-        marginBottom: "0"
+        marginBottom: "0",
+        overflow: false,
+        maxHeight: (window.innerHeight * 0.25)
     },
     projectBorderTop : {
         borderTop: "1px solid" + grayColor[10], 
@@ -77,7 +79,9 @@ const ProjectViewStyle = {
         marginRight: "15px"
     },
     projectANDis: {
-        marginLeft: "-20px"
+        marginLeft: "-20px",
+        maxHeight: (window.innerHeight * 0.2),
+        overflow: false
     },
     projectTechstacks: {
         marginRight: "15px"

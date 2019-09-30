@@ -88,7 +88,6 @@ class ProjectTile extends React.Component {
                     <GridItem xs = {12} sm = {12} md = {12}>
                     {
                       techStacks.map((tech, index) => {
-                        console.log(imagePaths+"/"+tech.imagePath);
                         return (
                           
                           <TechStackIcon

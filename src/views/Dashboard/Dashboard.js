@@ -10,6 +10,8 @@ import * as CONFIG from "../../config.json";
 const delayTime = 7000;
 const slideDelayTime = 1000;
 const numSlides = 6;
+var page = 1;
+var moreData = true;
 
 var isAtBeginning = true;
 
@@ -48,6 +50,7 @@ class Dashboard extends React.Component {
     this.performModalSequencing = this.performModalSequencing.bind(this);
     this.clickAble = this.clickAble.bind(this);
     this.clickedSequence = this.clickedSequence.bind(this);
+    this.getProjects = this.getProjects.bind(this);
   }
 
   sleep(milliseconds) {
@@ -140,31 +143,43 @@ class Dashboard extends React.Component {
       timeout = setTimeout(() => this.setState({mouseMoving:false}), 5000);
     })();
   }
-  componentWillMount() {
-    axios.get(CONFIG.default.API_URL).then((result) => {
+
+  getProjects() {
+    axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=12&orderBy=title`).then((result) => {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
-        return ({
-          projectIndex : index,
-          modalOpen : false,
-          nextToOpen : index === 0
-        })
+        if (this.state.projectTiles.length == 0){
+          return ({
+            projectIndex :  index,
+            modalOpen : false,
+            nextToOpen : index === 0
+          })
+        }
+        else{
+          return ({
+            projectIndex : this.state.projectTiles.length + index,
+            modalOpen : false,
+            nextToOpen : false
+          })
+        }
       });
-
-      this.setState({
-        projectTiles : generatedProjectTiles,
-        ProjectInformation : requestData,
+      if (generatedProjectTiles.length<12){
+        moreData = false;
+      }
+      this.setState(prevState => ({
+        projectTiles : prevState.projectTiles.concat(generatedProjectTiles),
+        ProjectInformation : prevState.ProjectInformation.concat(requestData),
         Loading : false
-      })
+      }))
     }).catch((error) => {
       console.error(error);
     });
+  }
 
+  componentWillMount() {
+    this.getProjects();
     
-
-
-
     window.addEventListener('wheel', (e) => {
       try {
         this.slide(e.wheelDelta);
@@ -184,6 +199,7 @@ class Dashboard extends React.Component {
         if (shouldBeOpen) {
           if (i > this.state.ProjectInformation.length - 1) {      
             i = 0;
+            page = 1;
           }
           
           this.performModalSequencing(i, shouldBeOpen);
@@ -192,6 +208,12 @@ class Dashboard extends React.Component {
         } else {
           if (i % 2 === 0 && !isAtBeginning) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
+          }
+          if (i % 6 === 0){
+            if (moreData){
+              page += 1;
+              this.componentWillMount();
+            }
           }
 
           if (isAtBeginning)
