@@ -73,7 +73,7 @@ class ProjectTile extends React.Component {
                         clientLogo = {clientLogo}
                         projectDescription = {projectDescription}
                         techStack = {techStacks}
-                        images = {images}
+                        coverImage = {coverImage}
                         clientVideo = {video}
                         team = {team}
                         imagePaths = {imagePaths}/>
