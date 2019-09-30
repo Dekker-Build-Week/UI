@@ -10,6 +10,7 @@ import * as CONFIG from "../../config.json";
 const delayTime = 7000;
 const slideDelayTime = 1000;
 const numSlides = 6;
+var page = 1;
 
 var isAtBeginning = true;
 
@@ -141,7 +142,8 @@ class Dashboard extends React.Component {
     })();
   }
   componentWillMount() {
-    axios.get(CONFIG.default.API_URL).then((result) => {
+    // axios.get(CONFIG.default.API_URL + "?page=" + page).then((result) => {
+      axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=8&orderBy=title`).then((result) => {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
@@ -192,6 +194,10 @@ class Dashboard extends React.Component {
         } else {
           if (i % 2 === 0 && !isAtBeginning) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
+          }
+          if (i % 8 === 0 && !isAtBeginning){
+            this.page += 1;
+            this.componentWillMount()
           }
 
           if (isAtBeginning)
