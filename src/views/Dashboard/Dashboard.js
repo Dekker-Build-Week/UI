@@ -21,9 +21,9 @@ const settings = {
   infinite: true,
   dots: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 1,
   slidesToScroll: 1,
-  rows: 2,
+  rows: 1,
   focusOnSelect: true,  
   autoplay: true,
   autoplaySpeed: autoScrollSpeed,
@@ -145,7 +145,7 @@ class Dashboard extends React.Component {
   }
 
   getProjects() {
-    axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=12&orderBy=title`).then((result) => {
+    axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=2&orderBy=title`).then((result) => {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
@@ -164,7 +164,7 @@ class Dashboard extends React.Component {
           })
         }
       });
-      if (generatedProjectTiles.length<12){
+      if (generatedProjectTiles.length<1){
         moreData = false;
       }
       this.setState(prevState => ({
@@ -206,10 +206,10 @@ class Dashboard extends React.Component {
 
           i++;
         } else {
-          if (i % 2 === 0 && !isAtBeginning) {
+          if (true) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
-          if (i % 6 === 0){
+          if (i % 1 === 0){
             if (moreData){
               page += 1;
               this.componentWillMount();
