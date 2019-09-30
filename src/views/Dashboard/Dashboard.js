@@ -17,6 +17,7 @@ var autoScrollSpeed = ((numSlides) * delayTime);
     
 const settings = {
   infinite: true,
+  dots: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -37,6 +38,8 @@ class Dashboard extends React.Component {
       Loading : true,
       mouseMoving : false,
       clicked: false,
+      imagePath :CONFIG.default.PIC_URL,
+
     }
 
     this.sleep = this.sleep.bind(this);
@@ -139,9 +142,7 @@ class Dashboard extends React.Component {
   }
   componentWillMount() {
     axios.get(CONFIG.default.API_URL).then((result) => {
-      var requestData = result.data.projects;
-
-      requestData = requestData.concat(requestData);
+      var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
         return ({
@@ -159,6 +160,10 @@ class Dashboard extends React.Component {
     }).catch((error) => {
       console.error(error);
     });
+
+    
+
+
 
     window.addEventListener('wheel', (e) => {
       try {
@@ -216,7 +221,6 @@ class Dashboard extends React.Component {
                     modalOpen : false,
                     fade : false,
                   }
-
                   if (this.state.projectTiles.length < this.state.ProjectInformation.length)
                     this.state.projectTiles.push(projectTileState);
 
@@ -224,14 +228,15 @@ class Dashboard extends React.Component {
                     <div onClick = {(e) => this.clickAble(e,index)}>
                     <ProjectTile
                       key = {index}
-                      projectTitle = {projInfo.projectTitle}
+                      projectTitle = {projInfo.title}
                       team = {projInfo.team}
-                      clientLogo = {projInfo.clientLogo}
-                      projectDescription = {projInfo.projectDescription}
-                      clientName = {projInfo.clientName}
-                      images = {projInfo.images}
-                      techStacks = {projInfo.techStack}
-                      video = {projInfo.video}
+                      clientLogo = {projInfo.client.imagePath}
+                      projectDescription = {projInfo.description}
+                      clientName = {projInfo.client.name}
+                      images = {projInfo.coverImagePath}
+                      imagePaths = {this.state.imagePath}
+                      techStacks = {projInfo.techStacks}
+                      video = {projInfo.videoPath}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
                       </div>

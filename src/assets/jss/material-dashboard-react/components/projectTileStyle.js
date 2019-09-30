@@ -9,7 +9,7 @@ const projectTileStyle = {
         color: "#FF313B",
         marginTop: "0px",
         minHeight: "auto",
-        fontSize : "30px",
+        fontSize : "20px",
         fontWeight: "300",
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         marginBottom: "3px",
@@ -24,7 +24,7 @@ const projectTileStyle = {
         borderRadius: "3px",
         marginTop: "-20px",
         marginBottom: "5px",
-        maxWidth: "50%",
+        maxWidth: "40%",
         objectFit : "stretch",
         marginRight: "15px",
         float: "left"

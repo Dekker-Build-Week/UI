@@ -18,13 +18,12 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, images, team, techStack, clientVideo } = props;
-
+    const { projectTitle, clientName, projectDescription, clientLogo, images, imagePaths, team, techStack, clientVideo } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 
               <CardHeader stats icon className = {classes.cardHeader}>
-                <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
+                <img src = {imagePaths+"/"+clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
                 <p className={classes.clientName}>{clientName}</p>
                 <h3 className={classes.projectTitle}>
                   {projectTitle}
@@ -39,7 +38,7 @@ const ProjectView = props => {
                           {
                             clientVideo
                             ?
-                            <VideoPlayer videoSource = {clientVideo} />
+                            <VideoPlayer videoSource = {"secret-sands-59734.herokuapp.com/"+clientVideo} />
                             :
                             <ImageSlider images = {images} />
                           }
@@ -61,8 +60,8 @@ const ProjectView = props => {
                                       return (
                                         <ANDiPhotoIcon 
                                           key = {index}
-                                          ANDiPhoto = {`https://${andi.ANDiPhoto}`}
-                                          ANDiName = {andi.ANDiName}/>
+                                          ANDiPhoto = {imagePaths+"/"+andi.photoPath}
+                                          ANDiName = {andi.name}/>
                                       
                                   )
                                   })}    
@@ -83,7 +82,7 @@ const ProjectView = props => {
                     return (
                       <TechStackIcon
                         key = {index}
-                        techStack = {`https://${tech.image}`} />
+                        techStack = {imagePaths+"/"+tech.imagePath} />
                     )
                   })
                   :

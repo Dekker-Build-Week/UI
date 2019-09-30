@@ -40,21 +40,17 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
 
-    let coverImage = null;
+    let coverImage = images;
 
-    if (images && images.length > 0) {
-      coverImage = images.find((image) => {
-          return image.position === 0
-      });
-    }
+
 
     return (
       <div className = {classes.projectTile}>
           <Card className = { nextToOpen ? classes.openingTile : null}>
             <CardHeader stats icon >
-              <img src = {`https://${clientLogo}`} alt = "Client Logo" className = {classes.clientLogo}/>
+              <img src = {imagePaths+"/"+clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
               <p></p>
               <h3 className={classes.cardTitle}>
                 {projectTitle}
@@ -66,7 +62,7 @@ class ProjectTile extends React.Component {
               coverImage === null ?
                 <CircularProgress className = {classes.circularProgress} />
               :
-                <img src={`https://${coverImage.source}`} className = {classes.coverImage} alt = "Project Cover" />
+                <img src={imagePaths+"/"+coverImage} className = {classes.coverImage} alt = "Project Cover" />
               }
                   <ProjectModal 
                     modalOpen = {this.props.modalOpen}
@@ -79,7 +75,8 @@ class ProjectTile extends React.Component {
                         techStack = {techStacks}
                         images = {images}
                         clientVideo = {video}
-                        team = {team}/>
+                        team = {team}
+                        imagePaths = {imagePaths}/>
                   </ProjectModal> 
             </CardBody>
             </CardActionArea>
@@ -90,11 +87,13 @@ class ProjectTile extends React.Component {
                   <GridContainer>
                     <GridItem xs = {12} sm = {12} md = {12}>
                     {
-                      techStacks.filter(t => t.important).map((tech, index) => {
+                      techStacks.map((tech, index) => {
+                        console.log(imagePaths+"/"+tech.imagePath);
                         return (
+                          
                           <TechStackIcon
                             key = {index}
-                            techStack = {`https://${tech.image}`} />
+                            techStack = {imagePaths+"/"+tech.imagePath} />
                         )
                       })
                     }

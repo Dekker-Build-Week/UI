@@ -1,3 +1,8 @@
 {
-    "API_URL" : "https://dekker-build-api.herokuapp.com/andch_back_app/projects/"
+    "API_URL" : "https://secret-sands-59734.herokuapp.com/get_all_projects",
+
+
+    "PIC_URL" : "https://secret-sands-59734.herokuapp.com"
+
+
 }
