@@ -14,6 +14,10 @@ const ProjectViewStyle = {
         marginTop: "170px",
         
     },
+    videoPlay:{
+        paddingLeft: "15px",
+        marginTop: "-30px"
+    },
     clientLogo: {
         height: "160px",
         boxShadow: "0 4px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",

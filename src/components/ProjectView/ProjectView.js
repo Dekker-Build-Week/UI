@@ -10,7 +10,6 @@ import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
 import TechStackIcon from "./TechStackIcon";
 import ANDiPhotoIcon from "./ANDiPhotoIcon";
-import VideoPlayer from "./VideoPlayer/VideoPlayer";
 import ImageSlider from './ImageSlider/ImageSlider';
 
 const useStyles = makeStyles(projectViewStyle);
@@ -18,7 +17,7 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, coverImage, imagePaths, team, techStack, clientVideo } = props;
+    const { projectTitle, clientName, projectDescription, clientLogo, images, imagePaths, team, techStack, clientVideo } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 
@@ -34,9 +33,9 @@ const ProjectView = props => {
                   <div className={classes.projectInfo}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={8}>
-                        <div>
-                        <img src = {imagePaths + "/" + coverImage}/>
-                        </div>
+                        <video className={classes.videoPlay} autoPlay loop height="580" width="950">
+                            <source src= {"http://secret-sands-59734.herokuapp.com/"+clientVideo} type="video/mp4"/>
+                        </video>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
                           <GridContainer>
