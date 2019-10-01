@@ -149,7 +149,7 @@ class Dashboard extends React.Component {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
-        if (this.state.projectTiles.length === 0){
+        if (this.state.projectTiles.length == 0){
           return ({
             projectIndex :  index,
             modalOpen : false,
@@ -164,7 +164,7 @@ class Dashboard extends React.Component {
           })
         }
       });
-      if (generatedProjectTiles.length<1){
+      if (generatedProjectTiles.length<12){
         moreData = false;
       }
       this.setState(prevState => ({
@@ -206,7 +206,7 @@ class Dashboard extends React.Component {
 
           i++;
         } else {
-          if (true) {
+          if (i % 2 === 0 && !isAtBeginning) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
           if (i % 6 === 0){
@@ -258,7 +258,7 @@ class Dashboard extends React.Component {
                       images = {projInfo.coverImagePath}
                       imagePaths = {this.state.imagePath}
                       techStacks = {projInfo.techStacks}
-                      video = {null}
+                      video = {projInfo.videoPath}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
                       </div>
