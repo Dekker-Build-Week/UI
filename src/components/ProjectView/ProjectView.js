@@ -34,7 +34,9 @@ const ProjectView = props => {
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={8}>
                         <div className = {classes.contentContainer}>
-                          <img src={imagePaths+"/"+coverImage} className = {classes.viewImage}/>
+                          <video width="100%" height="100%" autoPlay>
+                            <source src={imagePaths + "/" + clientVideo} type="video/mp4"/>
+                          </video>
                         </div>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
