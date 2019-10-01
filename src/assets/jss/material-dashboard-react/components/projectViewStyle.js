@@ -14,6 +14,15 @@ const ProjectViewStyle = {
         marginTop: "170px",
         
     },
+    viewImage:{
+        maxHeight : (window.innerHeight * 0.54),
+        width: (window.innerHeight * 1.05),
+        paddingLeft: "15px",
+        paddingTop: "15px",
+        flex: 1,
+        overflow: 'hidden',
+        alignItems: 'center',
+    },
     videoPlay:{
         paddingLeft: "15px",
         marginTop: "-30px"
@@ -54,7 +63,8 @@ const ProjectViewStyle = {
         height: (window.innerHeight * 0.55)
     },
     contentContainer : {
-        height : (window.innerHeight * 0.55)
+        height : (window.innerHeight * 0.55),
+        overflow: false
     },
     projectDescriptionContainer : {
         height : "100%",

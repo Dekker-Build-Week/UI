@@ -32,8 +32,8 @@ const projectTileStyle = {
       cardBody : {
         borderTop: "1px solid " + grayColor[10],
         marginLeft : "3px",
-        height: "500px",
-        maxHeight: "500px",
+        height: "200px",
+        maxHeight: "200px",
         overflow: "hidden",
         textAlign: "center",
         marginRight : "3px"

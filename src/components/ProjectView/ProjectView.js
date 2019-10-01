@@ -17,7 +17,7 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, images, imagePaths, team, techStack, clientVideo } = props;
+    const { projectTitle, clientName, projectDescription, clientLogo, coverImage, imagePaths, team, techStack, clientVideo } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 
@@ -33,9 +33,9 @@ const ProjectView = props => {
                   <div className={classes.projectInfo}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={8}>
-                        <video className={classes.videoPlay} autoPlay loop height="580" width="950">
-                            <source src= {"http://secret-sands-59734.herokuapp.com/"+clientVideo} type="video/mp4"/>
-                        </video>
+                        <div className = {classes.contentContainer}>
+                          <img src={imagePaths+"/"+coverImage} className = {classes.viewImage}/>
+                        </div>
                       </GridItem>
                       <GridItem xs={12} sm={12} md={4}>
                           <GridContainer>

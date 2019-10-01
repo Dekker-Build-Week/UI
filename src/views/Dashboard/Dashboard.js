@@ -21,9 +21,9 @@ const settings = {
   infinite: true,
   dots: true,
   speed: 500,
-  slidesToShow: 1,
+  slidesToShow: 3,
   slidesToScroll: 1,
-  rows: 1,
+  rows: 2,
   focusOnSelect: true,  
   autoplay: true,
   autoplaySpeed: autoScrollSpeed,
@@ -145,11 +145,11 @@ class Dashboard extends React.Component {
   }
 
   getProjects() {
-    axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=2&orderBy=title`).then((result) => {
+    axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=12&orderBy=title`).then((result) => {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
-        if (this.state.projectTiles.length == 0){
+        if (this.state.projectTiles.length === 0){
           return ({
             projectIndex :  index,
             modalOpen : false,
@@ -209,7 +209,7 @@ class Dashboard extends React.Component {
           if (true) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
-          if (i % 1 === 0){
+          if (i % 6 === 0){
             if (moreData){
               page += 1;
               this.componentWillMount();
@@ -258,7 +258,7 @@ class Dashboard extends React.Component {
                       images = {projInfo.coverImagePath}
                       imagePaths = {this.state.imagePath}
                       techStacks = {projInfo.techStacks}
-                      video = {projInfo.videoPath}
+                      video = {null}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
                       </div>
