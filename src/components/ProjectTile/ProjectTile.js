@@ -40,9 +40,8 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, video, nextToOpen } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, video, nextToOpen, coverImage } = this.props;
 
-    let coverImage = images;
 
 
 
@@ -76,7 +75,8 @@ class ProjectTile extends React.Component {
                         coverImage = {coverImage}
                         clientVideo = {video}
                         team = {team}
-                        imagePaths = {imagePaths}/>
+                        imagePaths = {imagePaths}
+                        images = {images}/>
                   </ProjectModal> 
             </CardBody>
             </CardActionArea>

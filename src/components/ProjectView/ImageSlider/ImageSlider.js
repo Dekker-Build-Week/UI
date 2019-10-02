@@ -29,7 +29,7 @@ export default (props) => {
         () => {
             const interval = setInterval(() => {
                 set(state => (state + 1) % (imagesLength));
-            }, 4000);
+            }, 2000);
             
             return () => {
                 clearInterval(interval);

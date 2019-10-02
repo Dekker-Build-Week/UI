@@ -258,7 +258,8 @@ class Dashboard extends React.Component {
                       clientLogo = {projInfo.client.imagePath}
                       projectDescription = {projInfo.description}
                       clientName = {projInfo.client.name}
-                      images = {projInfo.coverImagePath}
+                      coverImage = {projInfo.coverImagePath}
+                      images = {projInfo.images}
                       imagePaths = {this.state.imagePath}
                       techStacks = {projInfo.techStacks}
                       video = {projInfo.videoPath}
