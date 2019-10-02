@@ -29,7 +29,7 @@ const settings = {
   autoplaySpeed: autoScrollSpeed,
   pauseOnHover: true
 };
-    
+
 class Dashboard extends React.Component {
   constructor() {
     super();
@@ -58,6 +58,7 @@ class Dashboard extends React.Component {
   }
 
   closeAllModals() {
+    // closed all modals
     var newProjectTiles = this.state.projectTiles;
 
     newProjectTiles.forEach((projectTile, index) => {
@@ -71,6 +72,7 @@ class Dashboard extends React.Component {
 
 
   performModalSequencing(i, shouldBeOpen) {
+    // determines which is open/closed
     var newProjectTiles = this.state.projectTiles;
     
     newProjectTiles[i] = {
@@ -112,6 +114,7 @@ class Dashboard extends React.Component {
   
 
   setMouseMove(e) {
+    // moving mouse closes modals
     if(!this.state.clicked){
     e.preventDefault();
     this.setState({mouseMoving: true});
@@ -127,6 +130,9 @@ class Dashboard extends React.Component {
 }
 
   clickAble(e,i) {
+
+    //clicking opens modal
+
     if(!this.state.clicked){
     e.preventDefault();
     this.setState({clicked: true});
@@ -145,6 +151,7 @@ class Dashboard extends React.Component {
   }
 
   getProjects() {
+    // Get request for 12 projetcs from backend
     axios.get(`${CONFIG.default.API_URL}?page=${page}&limit=12&orderBy=title`).then((result) => {
       var requestData = result.data;
 
@@ -178,6 +185,7 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount() {
+    // Required to create annimated sliding funcitonality
     this.getProjects();
     
     window.addEventListener('wheel', (e) => {
@@ -190,6 +198,9 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
+    // checks which component is open. On a timer and looping
+    // Also handles sliding timing and loading more projects after 6 have passed (if possible)
+
     var i = 0;
     var shouldBeOpen = true;
 
@@ -232,6 +243,9 @@ class Dashboard extends React.Component {
   } 
 
   render() {
+    // slider creates carousel
+
+    // renders project tiles with relevant props
     return (
       <div onMouseMove = {(e) => this.setMouseMove(e)}
         onClick = {(e) => this.clickAble(e,null)}>
