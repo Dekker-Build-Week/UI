@@ -43,8 +43,6 @@ class ProjectTile extends React.Component {
     const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, video, nextToOpen, coverImage } = this.props;
 
 
-
-
     return (
       <div className = {classes.projectTile}>
           <Card className = { nextToOpen ? classes.openingTile : null}>

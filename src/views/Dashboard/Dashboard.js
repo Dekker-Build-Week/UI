@@ -7,7 +7,7 @@ import axios from 'axios';
 import ProjectTile from "components/ProjectTile/ProjectTile.js";
 import * as CONFIG from "../../config.json";
 
-const delayTime = 7000;
+const delayTime = 12000;
 const slideDelayTime = 1000;
 const numSlides = 6;
 var page = 1;

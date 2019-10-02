@@ -35,7 +35,7 @@ const ProjectView = props => {
                       <GridItem xs={12} sm={12} md={8}>
                       <div className = {classes.contentContainer}>
                           {
-                            <ImageSlider images = {images} />
+                            <ImageSlider imagePath = {imagePaths} images = {images} />
                           }
                         </div>
                       </GridItem>
