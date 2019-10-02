@@ -209,7 +209,7 @@ class Dashboard extends React.Component {
           if (i % 2 === 0 && !isAtBeginning) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
-          if (i == this.state.ProjectInformation.length) {
+          else if (i == this.state.ProjectInformation.length) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
           if (i % 6 === 0){
