@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import GridItem from "components/Grid/GridItem.js";
 import { makeStyles } from "@material-ui/core/styles";
 import techStackstyles from "assets/jss/material-dashboard-react/components/techStackStyle.js";
 

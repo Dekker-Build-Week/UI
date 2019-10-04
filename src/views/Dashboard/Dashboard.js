@@ -156,7 +156,7 @@ class Dashboard extends React.Component {
       var requestData = result.data;
 
       var generatedProjectTiles = requestData.map((data, index) => {
-        if (this.state.projectTiles.length == 0){
+        if (this.state.projectTiles.length === 0){
           return ({
             projectIndex :  index,
             modalOpen : false,
@@ -220,7 +220,7 @@ class Dashboard extends React.Component {
           if (i % 2 === 0 && !isAtBeginning) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
-          else if (i == this.state.ProjectInformation.length) {
+          else if (i === this.state.ProjectInformation.length) {
             setTimeout(() => this.slider.slickNext(), slideDelayTime);
           }
           if (i % 6 === 0){

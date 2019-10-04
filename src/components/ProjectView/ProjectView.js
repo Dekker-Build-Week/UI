@@ -17,12 +17,12 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, coverImage, imagePaths, team, techStack, images } = props;
+    const { projectTitle, clientName, projectDescription, clientLogo, imagePaths, team, techStack, images } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 
               <CardHeader stats icon className = {classes.cardHeader}>
-                <img src = {imagePaths+"/"+clientLogo} alt = "Client Logo" className = {classes.clientLogo}/>
+                <img alt="Client" src = {imagePaths+"/"+clientLogo} className = {classes.clientLogo}/>
                 <p className={classes.clientName}>{clientName}</p>
                 <h3 className={classes.projectTitle}>
                   {projectTitle}
@@ -35,7 +35,7 @@ const ProjectView = props => {
                       <GridItem xs={12} sm={12} md={8}>
                       <div className = {classes.contentContainer}>
                           {
-                            <img src={imagePaths + "/"+ images[0]["name"]} className = {classes.viewImage} />
+                            <img src={imagePaths + "/"+ images[0]["name"]} className = {classes.viewImage} alt="Client Logo" />
                           }
                         </div>
                       </GridItem>
