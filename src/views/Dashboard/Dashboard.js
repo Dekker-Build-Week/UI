@@ -276,7 +276,6 @@ class Dashboard extends React.Component {
                       images = {projInfo.images}
                       imagePaths = {this.state.imagePath}
                       techStacks = {projInfo.techStacks}
-                      video = {projInfo.videoPath}
                       nextToOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].nextToOpen}
                       modalOpen = {this.state.projectTiles.filter(x => x.projectIndex === index)[0].modalOpen}/>
                       </div>

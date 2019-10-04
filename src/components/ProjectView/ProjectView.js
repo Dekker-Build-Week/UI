@@ -17,7 +17,7 @@ const useStyles = makeStyles(projectViewStyle);
 const ProjectView = props => {
   const classes = useStyles();
 
-    const { projectTitle, clientName, projectDescription, clientLogo, coverImage, imagePaths, team, techStack, clientVideo, images } = props;
+    const { projectTitle, clientName, projectDescription, clientLogo, coverImage, imagePaths, team, techStack, images } = props;
     return (
         <div className = {classes.projectView}>
             <Card> 

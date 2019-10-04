@@ -40,7 +40,7 @@ class ProjectTile extends React.Component {
   }
 
   render() {
-    const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, video, nextToOpen, coverImage } = this.props;
+    const { projectTitle, clientName, team, clientLogo, images, imagePaths, techStacks, projectDescription, classes, nextToOpen, coverImage } = this.props;
 
 
     return (
@@ -71,7 +71,6 @@ class ProjectTile extends React.Component {
                         projectDescription = {projectDescription}
                         techStack = {techStacks}
                         coverImage = {coverImage}
-                        clientVideo = {video}
                         team = {team}
                         imagePaths = {imagePaths}
                         images = {images}/>
