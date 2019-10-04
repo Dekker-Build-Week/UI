@@ -10,7 +10,7 @@ import GridItem from 'components/Grid/GridItem';
 import GridContainer from 'components/Grid/GridContainer';
 import TechStackIcon from "./TechStackIcon";
 import ANDiPhotoIcon from "./ANDiPhotoIcon";
-import ImageSlider from './ImageSlider/ImageSlider';
+
 
 const useStyles = makeStyles(projectViewStyle);
 
