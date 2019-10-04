@@ -243,7 +243,7 @@ class Dashboard extends React.Component {
   } 
 
   render() {
-    // slider creates carousel
+    // slider creates the carousel
 
     // renders project tiles with relevant props
     return (
